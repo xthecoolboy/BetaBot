@@ -8,6 +8,14 @@ exports.run = (client, message, args) => {
   if (message.mentions.users.size < 1) return message.reply('You must mention someone to warn.');
   if (reason.length < 1) return message.reply('You must provide a reason.');
 
+  const logEmbed = new Discord.RichEmbed()
+  .setAuthor(`User Warned`)
+  .setColor(config.colors)
+  .addField("Executor", `${message.author.tag}`)
+  .addField("Reason", `${reason}`)
+  .addField("Channel", `${message.channel}`)
+  let logsChannel = message.guild.channels.find(channel => channel.name === config.logs_channel);
+
   let dmsEmbed = new Discord.RichEmbed()
   .setTitle("Warn")
   .setColor(config.color)
@@ -16,6 +24,7 @@ exports.run = (client, message, args) => {
   .addField("Reason", reason);
 
   user.send(dmsEmbed);
+  logsChannel.send(logEmbed)
 
   message.delete();
   

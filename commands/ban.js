@@ -11,14 +11,22 @@ let xdemb = new Discord.RichEmbed()
         .addField("Usage:", `!ban [user] [reason]`, true)
         .addField("Example:", `!ban @BetaBot spam`)
 
-        if(!message.member.hasPermission("BAN_MEMBERS") && message.author.id !== "291221132256870400") return message.channel.send("Sorry you don't have permission to use this!");
+        const logEmbed = new Discord.RichEmbed()
+        .setAuthor(`User Banned`)
+        .setColor(config.colors)
+        .addField("Executor", `<@${message.author.id}>`)
+        .addField("User banned", `${deleteCount}`)
+        .addField("Channel", `${message.channel}`)
+        .addField("Reason", `${res}`)
+        let logsChannel = message.guild.channels.find(channel => channel.name === config.logs_channel);
+
+        if(!message.member.hasPermission("BAN_MEMBERS")) return message.channel.send("Sorry you don't have permission to use this!");
 
         let member = message.mentions.members.first();
         if(!member) return message.channel.send(xdemb)
         if(!member.bannable) return message.channel.send("I can't ban this user!")
-        if(member.user.id === "291221132256870400") return message.channel.send("I can't ban my owner!")
 
-        if(member.id === message.author.id) return message.channel.send("You can't ban your self")
+        if(member.id === message.author.id) return message.channel.send("You can't ban yourself")
 
         let reason = args.slice(1).join(" ");
 
@@ -28,7 +36,7 @@ let xdemb = new Discord.RichEmbed()
             res = reason
         }
 
-        await member.ban(reason).catch(error => message.channel.send(`Sorry, I coldn't ban because of: ${error}`));
+        await member.ban(reason).catch(error => message.channel.send(`Sorry, I couldn't ban because of: ${error}`));
 
         let bean = new Discord.RichEmbed()
         .setColor(config.color)
@@ -39,6 +47,7 @@ let xdemb = new Discord.RichEmbed()
         .setTimestamp()
 
         message.channel.send(bean)
+        logsChannel.send(logEmbed)
 
         message.delete()
 

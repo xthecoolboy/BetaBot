@@ -3,6 +3,15 @@ const config = require('../config.json');
 module.exports.run = async (bot, message, args) => {
     if (!message.member.hasPermission("MANAGE_MESSAGES")) return message.channel.send("Sorry, you don't have permissions to use this!");
 
+
+    const logEmbed = new Discord.RichEmbed()
+    .setAuthor(`User Unmuted`)
+    .setColor(config.colors)
+    .addField("Executor", `<@${message.author.id}>`)
+    .addField("User Unmuted", `${message.mentions.users.first}`)
+    .addField("Channel", `${message.channel}`)
+    let logsChannel = message.guild.channels.find(channel => channel.name === config.logs_channel);
+
         let toMute = message.guild.member(message.mentions.users.first()) || message.guild.members.get(args[0]);
         if(!toMute) return message.channel.sendMessage("Please mention an user or ID to mute!");
 
@@ -12,6 +21,7 @@ module.exports.run = async (bot, message, args) => {
 
         await toMute.removeRole(role);
         message.channel.sendMessage("The user has been unmuted!");
+        logsChannel.send(logEmbed)
 
         message.delete();
 

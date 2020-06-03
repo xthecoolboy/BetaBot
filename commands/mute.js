@@ -6,16 +6,16 @@ module.exports.run = async (bot, message, args) => {
   //!mute @user 1s/m/h/d
 
   let tomute = message.guild.member(message.mentions.users.first() || message.guild.members.get(args[0]));
-  if(!tomute) return message.channel.send("Please tag user to mute!");
+  if(!tomute) return message.channel.send("Please tag a user to mute!");
   if (!message.member.hasPermission("MANAGE_MESSAGES")) return message.channel.send("Sorry, you don't have permissions to use this!");
   if(tomute.hasPermission("MANAGE_MESSAGES")) return message.channel.send("I can't mute this user");
   if (tomute.id === message.author.id) return message.channel.send("You cannot mute yourself!");
-  let muterole = message.guild.roles.find(`name`, "Muted"); //Replace "Muted" to your muted role name
+  let muterole = message.guild.roles.find(`name`, config.muted_role);
  
   if(!muterole){
     try{
       muterole = await message.guild.createRole({
-        name: "Muted",
+        name: config.muted_role,
         color: config.color,
         permissions:[]
       })
@@ -38,7 +38,7 @@ module.exports.run = async (bot, message, args) => {
 
   setTimeout(function(){
     tomute.removeRole(muterole.id);
-    message.channel.send(`<@${tomute.id}> has been unmuted!`);
+    message.channel.send(`<@${tomute.id}> has been unmuted!`); //probably gonna remove later
   }, ms(mutetime));
 
   message.delete();

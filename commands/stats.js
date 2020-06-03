@@ -34,7 +34,7 @@
              .addField("• CPU usage", `\`${percent.toFixed(2)}%\``,true)
              .addField("• Arch", `\`${os.arch()}\``,true)
              .addField("• Platform", `\`\`${os.platform()}\`\``,true)
-             .setFooter("OdarBot stats")
+             .setFooter("BetaBot stats")
      
              message.channel.send(embedStats)
              })

@@ -9,7 +9,7 @@ module.exports.run = async (bot, message, args) => {
     .setColor(config.colors)
     .setTitle("🚫 Please specify an amount of messages to clear")
     .setDescription(`Usage - /purge <amount>`)
-    .setFooter(`Due to limitations by Discord, this must be below 100`)
+    .setFooter(`Due to limitations by Discord, this must be below 100 and newer than 2 weeks`)
  const deleteCount = parseInt(args[0], 10);
 
  const logEmbed = new Discord.RichEmbed()
@@ -18,7 +18,7 @@ module.exports.run = async (bot, message, args) => {
     .addField("Executor", `<@${message.author.id}>`)
     .addField("Deleted", `${deleteCount}`)
     .addField("Channel", `${message.channel}`)
-    let logsChannel = message.guild.channels.find(channel => channel.name === logs.config);
+    let logsChannel = message.guild.channels.find(channel => channel.name === config.logs_channel);
 	{
 		if (args[0])
 		{
