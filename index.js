@@ -10,4 +10,3 @@ const printValues = function(values,text) {
     console.log(`  ${key} = \x1b[32m'${values[key]}'\x1b[0m`);
   }
 }
-//

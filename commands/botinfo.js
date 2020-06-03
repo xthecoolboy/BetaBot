@@ -18,7 +18,7 @@ module.exports.run = async (bot, message, args) => {
     .addField("Users", `<:user:424958082691629057> ${usersize}`, inline)
     .addField("Bot Library", "<:discordjs:425241283779362816> Discord.js", inline)
     .addField("Created On", bot.user.createdAt)
-    .setFooter(`Information about: ${bot.user.username}. Developed by: Swqpping`)
+    .setFooter(`Information about: ${bot.user.username}. Developed by: Swqpping#2020`)
     .setTimestamp()
     
     message.channel.send(botembed);

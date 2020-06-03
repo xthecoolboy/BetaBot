@@ -1,5 +1,6 @@
 { 
     "USERPREFIX":"/",
     "BOT_TOKEN":"NzE3NTg2MTU3NTcxMTQ1NzM5.XtceOQ.79I_oRQnYSdSMI5HgD6RaE917EU-RR",
-    "COLOR": "#fc9003"
+    "COLOR": "#fc9003",
+    "LOGS_CHANNEL": "logs"
 }
