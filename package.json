@@ -33,8 +33,6 @@
     "nodemon": "^2.0.2",
     "opusscript": "0.0.6",
     "querystring": "^0.2.0",
-    "random-number": "0.0.9",
-    "request": "^2.88.0",
     "urban": "^0.3.2",
     "uws": "^100.0.1",
     "weather-js": "^2.0.0",

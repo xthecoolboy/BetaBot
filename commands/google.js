@@ -50,7 +50,7 @@ exports.run = async (bot, msg, args) => {
     }
 
     if(results.length === 0) {
-        return await msg.channel.send("Sorry, I didn't found any results");
+        return await msg.channel.send("Sorry, I didn't find any results");
     }
     
     const firstentry = `${results[0].link}`;

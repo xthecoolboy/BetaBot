@@ -4,7 +4,7 @@ module.exports.run = async (bot, message, args) => {
   if(args[0] == "help"){
     let helpembxd = new Discord.RichEmbed()
     .setColor("#fc9003")
-    .addField("Contact Command", "Usage: !Contact <reason>")
+    .addField("Contact Command", "Usage: !contact <reason>")
 
     message.channel.send(helpembxd);
     return;
@@ -13,7 +13,7 @@ module.exports.run = async (bot, message, args) => {
     let Invite = await message.guild.channels.find((c) => c.type === 'text').createInvite()
     let Sender = message.author;
     const sayMessage = args.join(" ");
-    if(!sayMessage) return message.channel.send("Please give us reason for contacting").then(msg => {msg.delete(5000)});
+    if(!sayMessage) return message.channel.send("Please give us a reason for contacting").then(msg => {msg.delete(5000)});
 
    let contact = new Discord.RichEmbed()
    .setColor("#fc9003")
@@ -33,7 +33,7 @@ module.exports.run = async (bot, message, args) => {
     .setDescription("Your contact message has been sent!")
     .addField("Reqested by ", Sender)
     .addField("Message: ", sayMessage)
-    .setFooter("Thanks you for contacting with the OdarBot support!")
+    .setFooter("Thanks you for contacting with the BetaBot support!")
 
     message.channel.send(embed).then(msg => {msg.delete(10000)});
 
