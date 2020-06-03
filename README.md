@@ -1,14 +1,12 @@
 
 
-**Requirements**
-
+## Requirements
 
 Node.js Recommended 12.16.0 and up - https://nodejs.org/en/download/
 
 
 
-**How to setup**
-
+## How to setup
 
 Make a bot here and grab the token
 
