@@ -7,7 +7,7 @@ module.exports.run = async (bot, message, args) => {
 
     const { body } = await snekfetch.get('https://random.dog/woof.json');
     const embed = new Discord.RichEmbed()
-    .setColor(config.color)
+    .setColor(config.COLOR)
     .setImage(body.url);
 
     message.channel.send(embed)

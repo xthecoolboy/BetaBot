@@ -3,7 +3,7 @@ const config = require('../config.json');
 
 module.exports.run = async (bot, message, args) => {
 
-  if(message.author.id !== "291221132256870400") return;
+  if (!message.member.hasPermission("MANAGE_MESSAGES")) return message.channel.send("Sorry, you don't have permissions to use this!");
 
   const cmd = args.join(' ').split(' | ')
 
