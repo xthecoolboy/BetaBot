@@ -1,5 +1,5 @@
 const Discord = require("discord.js")
-const config = require('./config.json');
+const config = require('../config.json');
 module.exports.run = async (bot, message, args) => {
 
 let killed = message.mentions.members.first();

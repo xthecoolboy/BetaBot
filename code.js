@@ -30,6 +30,6 @@ readdir("./commands/", (err, files) => {
 
   });
 
-  console.log("Main Bot Loaded")
+  console.log(`\x1b[42mINFO\x1b[40m \x1b[32mSuccesfully Started BetaBot!\x1b[37m`)
 
   user.login(BOT_TOKEN)

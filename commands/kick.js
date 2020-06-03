@@ -1,5 +1,5 @@
 const Discord = require("discord.js")
-const config = require('./config.json');
+const config = require('../config.json');
 module.exports.run = async (bot, message, args) => {
   
 
@@ -10,14 +10,13 @@ module.exports.run = async (bot, message, args) => {
   .setTitle("Kick Command")
   .addField("Description:", `Kick a member`, true)
   .addField("Usage:", "!kick [user] [reason]", true)
-  .addField("Example:" ,"!kick @Odar spam")
+  .addField("Example:" ,"!kick @BetaBot spam")
 
     let member = message.mentions.members.first();
     if(!member) return message.channel.send(xdemb)
       
     if(!member.kickable) 
       return message.channel.send("I cannot kick this user!");
-   if(member.user.id === "291221132256870400") return message.channel.send("I can't kick my owner!")
 
     
     let reason = args.slice(1).join(' ');

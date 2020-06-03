@@ -1,8 +1,8 @@
 const Discord = require('discord.js');
 const fs = require("fs");
-const config = require('./config.json');
+const config = require('../config.json');
 exports.run = (client, message, args) => {
-  if(!message.member.hasPermission("MANAGE_MESSAGES")) return message.reply("You don't have permissions to do that!");
+  if (!message.member.hasPermission("KICK_MEMBERS")) return message.channel.send("Sorry, you don't have permissions to use this!");
   let reason = args.slice(1).join(' ');
   let user = message.mentions.users.first();
   if (message.mentions.users.size < 1) return message.reply('You must mention someone to warn.');

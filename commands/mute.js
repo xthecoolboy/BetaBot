@@ -1,13 +1,13 @@
 const Discord = require("discord.js");
 const ms = require("ms");
-const config = require('./config.json');
+const config = require('../config.json');
 module.exports.run = async (bot, message, args) => {
 
   //!mute @user 1s/m/h/d
 
   let tomute = message.guild.member(message.mentions.users.first() || message.guild.members.get(args[0]));
   if(!tomute) return message.channel.send("Please tag user to mute!");
-  if(!message.member.hasPermission("MANAGE_MESSAGES")) return message.channel.send("Sorry, you don't have permissions to use this!");
+  if (!message.member.hasPermission("MANAGE_MESSAGES")) return message.channel.send("Sorry, you don't have permissions to use this!");
   if(tomute.hasPermission("MANAGE_MESSAGES")) return message.channel.send("I can't mute this user");
   if (tomute.id === message.author.id) return message.channel.send("You cannot mute yourself!");
   let muterole = message.guild.roles.find(`name`, "Muted"); //Replace "Muted" to your muted role name

@@ -1,5 +1,5 @@
 const hastebin = require('hastebin-gen');
-const config = require('./config.json');
+const config = require('../config.json');
 exports.run = (bot, msg, args) => {
 
      let haste = args.slice(0).join(" ")

@@ -1,5 +1,5 @@
 const Discord = require("discord.js");
-const config = require('./config.json');
+const config = require('../config.json');
 
 module.exports.run = async (bot, message, args) => {
 
@@ -20,7 +20,7 @@ module.exports.run = async (bot, message, args) => {
   .addField("Usage", "!addrole [user] [role]", true)
   .addField("Example", "!addrole @BetaBot Member")
 
-  if(!message.member.hasPermission("MANAGE_ROLES")) return message.channel.send("You don't have permissions to do that!");
+  if (!message.member.hasPermission("MANAGE_ROLES")) return message.channel.send("Sorry, you don't have permissions to use this!");
   let rMember = message.guild.member(message.mentions.users.first()) || message.guild.members.get(args[0]);
   if(!rMember) return message.channel.send(xdemb);
 

@@ -1,7 +1,7 @@
 const { Command } = require('discord.js-commando');
 const snekfetch = require('snekfetch');
 const Discord = require("discord.js");
-const config = require('./config.json');
+const config = require('../config.json');
 
 module.exports.run = async (bot, message, args) => {
 

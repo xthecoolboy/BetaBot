@@ -1,5 +1,5 @@
  const Discord = require("discord.js")
- const config = require('./config.json');
+ const config = require('../config.json');
  
  module.exports.run = async (bot, message, args) => {
 
@@ -13,7 +13,7 @@
     let ballembed = new Discord.RichEmbed()
 
     .setAuthor(message.author.username)
-    .setColor("#fc9003")
+    .setColor(config.colors)
     .addField("Question", question)
     .addField("Answer", replies[result]);
 

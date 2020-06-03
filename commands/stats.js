@@ -2,7 +2,7 @@
  const os = require('os')
  const cpuStat = require("cpu-stat");
  const moment = require("moment") 
- const config = require('./config.json');
+ const config = require('../config.json');
 
 
  module.exports.run = async (bot, message, args) => {

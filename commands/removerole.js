@@ -1,5 +1,5 @@
 const Discord = require("discord.js");
-const config = require('./config.json');
+const config = require('../config.json');
 module.exports.run = async (bot, message, args) => {
   if(args[0] == "help"){
     let helpembxd = new Discord.RichEmbed()
@@ -17,7 +17,7 @@ module.exports.run = async (bot, message, args) => {
   .addField("Usage", "!removerole [user] [role]", true)
   .addField("Example", "!removerole @BetaBot Member")
 
-  if(!message.member.hasPermission("MANAGE_ROLES")) return message.channel.send("You need the `manage members`premission to do that!.");
+  if (!message.member.hasPermission("MANAGE_ROLES")) return message.channel.send("Sorry, you don't have permissions to use this!");
   let rMember = message.guild.member(message.mentions.users.first()) || message.guild.members.get(args[0]);
   if(!rMember) return message.channel.send(xdemb);
 

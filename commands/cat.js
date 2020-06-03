@@ -1,6 +1,6 @@
 const Commando = require('discord.js-commando');
 const request = require('request'); 
-const config = require('./config.json');
+const config = require('../config.json');
 const Discord = require("discord.js")
 
 module.exports.run = async (bot, message, args) => {
