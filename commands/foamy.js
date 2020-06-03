@@ -7,7 +7,7 @@ module.exports.run = async (bot, message, args) => {
         embed: {
           title: "FOAMY IS ON TOP!",
           description: "Foamy Info",
-          color: config.color,
+          color: config.COLOR,
           fields: [
             {
               name: "Who is Foamy??",

@@ -1,7 +1,8 @@
 { 
     "USERPREFIX":"/",
-    "BOT_TOKEN":"NzE3NTg2MTU3NTcxMTQ1NzM5.XtceOQ.79I_oRQnYSdSMI5HgD6RaE917EU-RR",
+    "BOT_TOKEN":"Put your bot token here",
     "COLOR": "#fc9003",
-    "LOGS_CHANNEL": "logs",
-    "MUTED_ROLE": "Muted"
+    "LOGS_CHANNEL": "applications",
+    "MUTED_ROLE": "Muted",
+    "WELCOME_CHANNEL": "692954949835030528"
 }

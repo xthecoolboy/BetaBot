@@ -6,7 +6,7 @@ module.exports.run = async (bot, message, args) => {
 	if(!message.member.hasPermission("MANAGE_MESSAGES")) return message.reply("You don't have permission to use this command!");
  
  const noAmount = new Discord.RichEmbed()
-    .setColor(config.colors)
+    .setColor(config.COLOR)
     .setTitle("🚫 Please specify an amount of messages to clear")
     .setDescription(`Usage - /purge <amount>`)
     .setFooter(`Due to limitations by Discord, this must be below 100 and newer than 2 weeks`)
@@ -14,11 +14,11 @@ module.exports.run = async (bot, message, args) => {
 
  const logEmbed = new Discord.RichEmbed()
     .setAuthor(`Channel Purged`)
-    .setColor(config.colors)
+    .setColor(config.COLOR)
     .addField("Executor", `<@${message.author.id}>`)
     .addField("Deleted", `${deleteCount}`)
     .addField("Channel", `${message.channel}`)
-    let logsChannel = message.guild.channels.find(channel => channel.name === config.logs_channel);
+    let logsChannel = message.guild.channels.find(channel => channel.name === config.LOGS_CHANNEL);
 	{
 		if (args[0])
 		{

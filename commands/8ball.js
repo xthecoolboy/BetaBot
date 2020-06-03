@@ -13,7 +13,7 @@
     let ballembed = new Discord.RichEmbed()
 
     .setAuthor(message.author.username)
-    .setColor(config.colors)
+    .setColor(config.COLOR)
     .addField("Question", question)
     .addField("Answer", replies[result]);
 

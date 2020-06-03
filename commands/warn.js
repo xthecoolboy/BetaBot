@@ -10,15 +10,15 @@ exports.run = (client, message, args) => {
 
   const logEmbed = new Discord.RichEmbed()
   .setAuthor(`User Warned`)
-  .setColor(config.colors)
+  .setColor(config.COLOR)
   .addField("Executor", `${message.author.tag}`)
   .addField("Reason", `${reason}`)
   .addField("Channel", `${message.channel}`)
-  let logsChannel = message.guild.channels.find(channel => channel.name === config.logs_channel);
+  let logsChannel = message.guild.channels.find(channel => channel.name === config.LOGS_CHANNEL);
 
   let dmsEmbed = new Discord.RichEmbed()
   .setTitle("Warn")
-  .setColor(config.color)
+  .setColor(config.COLOR)
   .setDescription(`You have been warned on \`${message.guild.name}\``)
   .addField("Warned by", message.author.tag)
   .addField("Reason", reason);

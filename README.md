@@ -1,4 +1,4 @@
-
+If you found a bug, please open an issue, Pull Requests are always welcome.
 
 ## Requirements
 

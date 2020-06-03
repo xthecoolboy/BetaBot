@@ -22,7 +22,7 @@ if (member.user.bot === true) {
             let embed = new Discord.RichEmbed()
                 //.setAuthor(member.user.username)
                 .setThumbnail((target.displayAvatarURL))
-                .setColor(config.color)
+                .setColor(config.COLOR)
                 .addField("Full Username", `${member.user.tag}`, inline)
                 .addField("ID", member.user.id, inline)
                 .addField("Nickname", `${member.nickname !== null ? `<:yes:425632265993846795> Nickname: ${member.nickname}` : "<:no:425632070036094986> None"}`, true)

@@ -9,7 +9,7 @@ module.exports.run = async (bot, message, args) => {
     let uptimxd = bot.uptime 
     let servsize = bot.guilds.size
     let botembed = new Discord.RichEmbed()
-    .setColor(config.color)
+    .setColor(config.COLOR)
     .setThumbnail(bicon)
     .addField("Bot Name", `<:bot:425631858265423883> ${bot.user.username}`, inline)
     .addField("Bot Owner", "<:odar:424890572919013397> <@291221132256870400>", inline )

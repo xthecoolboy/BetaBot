@@ -5,7 +5,7 @@ const config = require('../config.json');
 module.exports.run = async (bot, message, args) => {
 
 let xdemb = new Discord.RichEmbed()
-        .setColor(config.color)
+        .setColor(config.COLOR)
         .setTitle("Ban Command")
         .addField("Description:", `Ban a member`, true)
         .addField("Usage:", `!ban [user] [reason]`, true)
@@ -13,12 +13,12 @@ let xdemb = new Discord.RichEmbed()
 
         const logEmbed = new Discord.RichEmbed()
         .setAuthor(`User Banned`)
-        .setColor(config.colors)
+        .setColor(config.COLOR)
         .addField("Executor", `<@${message.author.id}>`)
         .addField("User banned", `${deleteCount}`)
         .addField("Channel", `${message.channel}`)
         .addField("Reason", `${res}`)
-        let logsChannel = message.guild.channels.find(channel => channel.name === config.logs_channel);
+        let logsChannel = message.guild.channels.find(channel => channel.name === config.LOGS_CHANNEL);
 
         if(!message.member.hasPermission("BAN_MEMBERS")) return message.channel.send("Sorry you don't have permission to use this!");
 
@@ -39,7 +39,7 @@ let xdemb = new Discord.RichEmbed()
         await member.ban(reason).catch(error => message.channel.send(`Sorry, I couldn't ban because of: ${error}`));
 
         let bean = new Discord.RichEmbed()
-        .setColor(config.color)
+        .setColor(config.COLOR)
         .setTitle(`Ban | ${member.user.tag}`)
         .addField("User", member, true)
         .addField("Moderator", message.author, true)
