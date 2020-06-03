@@ -1,7 +1,7 @@
 {
-  "name": "valiantroleplayleobot",
+  "name": "betabot",
   "version": "1.0.0",
-  "description": "Server Status",
+  "description": "Beta Bot",
   "main": "index.js",
   "scripts": {
     "start": "nodemon index.js",
