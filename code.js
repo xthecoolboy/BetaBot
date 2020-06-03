@@ -13,17 +13,6 @@ readdir("./commands/", (err, files) => {
       user.commands.set(props.help.name, props);
     });
   });
-
-  readdir('./events/', (err, files) => {
-    if (err) return console.error;
-    files.forEach(file => {
-      if(!file.endsWith('.js')) return;
-      const evt = require(`./events/${file}`);
-      let evtName = file.split('.')[0];
-      user.on(evtName, evt.bind(null, user));
-    });
-  });
-//
   user.on("message", async message => {
     if(message.author.bot) return;
     if(message.channel.type === "dm") return;

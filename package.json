@@ -1,26 +1,56 @@
 {
-  "name": "betabot",
+  "name": "valiantroleplayleobot",
   "version": "1.0.0",
-  "description": "betabot",
+  "description": "Server Status",
   "main": "index.js",
-  "dependencies": {
-    "discord.js": "^12.2.0",
-    "fs": "0.0.1-security",
-    "ms": "^2.1.2",
-    "nodemon": "^2.0.4"
-  },
-  "devDependencies": {},
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "nodemon index.js",
+    "update": "git pull && npm install",
+    "swqpping": "nodemon code.js",
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "all": "concurrently \"npm run start\" \"npm run swqpping\""
+  },
+  "author": "Douile / Roque",
+  "license": "GPL-3.0",
+  "dependencies": {
+    "async": "^3.1.1",
+    "better-discord-antispam": "^1.0.6",
+    "cheerio": "^1.0.0-rc.3",
+    "concurrently": "^5.0.2",
+    "cows": "^2.1.0",
+    "cpu-stat": "^2.0.1",
+    "discord.js": "^11.4.2",
+    "discord.js-commando": "^0.10.0",
+    "discord.js-lavalink": "^2.2.3",
+    "enmap": "^5.2.4",
+    "erela.js": "^1.0.8",
+    "fetch-timeout": "0.0.2",
+    "fs": "0.0.1-security",
+    "giphy-api": "^2.0.1",
+    "give-me-a-joke": "^0.1.2",
+    "google-translate-api": "^2.3.0",
+    "got": "^10.3.0",
+    "hastebin-gen": "^2.0.5",
+    "libsodium-wrappers": "^0.7.4",
+    "m3u8stream": "^0.6.4",
+    "moment": "^2.24.0",
+    "node-fetch": "^2.3.0",
+    "nodemon": "^2.0.2",
+    "opusscript": "0.0.6",
+    "parse-time": "^0.1.4",
+    "querystring": "^0.2.0",
+    "random-number": "0.0.9",
+    "request": "^2.88.0",
+    "simple-youtube-api": "^5.2.1",
+    "urban": "^0.3.2",
+    "uws": "^100.0.1",
+    "weather-js": "^2.0.0",
+    "yo-mamma": "^1.3.0",
+    "youtube-search": "^1.1.4",
+    "ytdl-core": "^0.29.7"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/Swqppingg/BetaBot.git"
-  },
-  "author": "Swqpping",
-  "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/Swqppingg/BetaBot/issues"
-  },
-  "homepage": "https://github.com/Swqppingg/BetaBot#readme"
+    "url": ""
+  }
 }
