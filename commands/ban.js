@@ -9,7 +9,7 @@ let xdemb = new Discord.RichEmbed()
         .setTitle("Ban Command")
         .addField("Description:", `Ban a member`, true)
         .addField("Usage:", `!ban [user] [reason]`, true)
-        .addField("Example:", `!ban @Odar spam`)
+        .addField("Example:", `!ban @BetaBot spam`)
 
         if(!message.member.hasPermission("BAN_MEMBERS") && message.author.id !== "291221132256870400") return message.channel.send("Sorry you don't have permission to use this!");
 

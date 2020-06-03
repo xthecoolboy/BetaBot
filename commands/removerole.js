@@ -15,7 +15,7 @@ module.exports.run = async (bot, message, args) => {
   .setTitle(`Removerole command`)
   .addField("Description:", "Take role from member", true)
   .addField("Usage", "!removerole [user] [role]", true)
-  .addField("Example", "!removerole @Odar Member")
+  .addField("Example", "!removerole @BetaBot Member")
 
   if(!message.member.hasPermission("MANAGE_ROLES")) return message.channel.send("You need the `manage members`premission to do that!.");
   let rMember = message.guild.member(message.mentions.users.first()) || message.guild.members.get(args[0]);

@@ -17,7 +17,7 @@ module.exports.run = async (bot, message, args) => {
   .setTitle(`Addrole command`)
   .addField("Description:", "Add role to member", true)
   .addField("Usage", "!addrole [user] [role]", true)
-  .addField("Example", "!addrole @Odar Member")
+  .addField("Example", "!addrole @BetaBot Member")
 
   if(!message.member.hasPermission("MANAGE_ROLES")) return message.channel.send("You don't have premmsions to do that!");
   let rMember = message.guild.member(message.mentions.users.first()) || message.guild.members.get(args[0]);
