@@ -3,7 +3,7 @@ const Discord = require("discord.js");
 module.exports.run = async (bot, message, args) => {
   if(args[0] == "help"){
     let helpembxd = new Discord.RichEmbed()
-    .setColor("#00ff00")
+    .setColor("#fc9003")
     .addField("Removerole Command", "Usage: !removerole <@user> <role>")
 
     message.channel.send(helpembxd);
@@ -11,7 +11,7 @@ module.exports.run = async (bot, message, args) => {
   } 
 
   let xdemb = new Discord.RichEmbed()
-  .setColor("#00ff00")
+  .setColor("#fc9003")
   .setTitle(`Removerole command`)
   .addField("Description:", "Take role from member", true)
   .addField("Usage", "!removerole [user] [role]", true)

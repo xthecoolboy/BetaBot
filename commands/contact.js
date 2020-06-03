@@ -3,7 +3,7 @@ const Discord = require("discord.js");
 module.exports.run = async (bot, message, args) => {
   if(args[0] == "help"){
     let helpembxd = new Discord.RichEmbed()
-    .setColor("#00ff00")
+    .setColor("#fc9003")
     .addField("Contact Command", "Usage: !Contact <reason>")
 
     message.channel.send(helpembxd);
@@ -16,7 +16,7 @@ module.exports.run = async (bot, message, args) => {
     if(!sayMessage) return message.channel.send("Please give us reason for contacting").then(msg => {msg.delete(5000)});
 
    let contact = new Discord.RichEmbed()
-   .setColor("00ff00")
+   .setColor("#fc9003")
    .setThumbnail(Sender.displayAvatarURL)
    .setDescription(`Contact message from [${message.guild.name}](${Invite.url})`)
    .setTitle("Message from contact command!")
@@ -28,7 +28,7 @@ module.exports.run = async (bot, message, args) => {
     bot.users.get("291221132256870400").send(contact);
 
     let embed = new Discord.RichEmbed()
-    .setColor("#00ff00")
+    .setColor("#fc9003")
     .setTitle("Message Sent!")
     .setDescription("Your contact message has been sent!")
     .addField("Reqested by ", Sender)

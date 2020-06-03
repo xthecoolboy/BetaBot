@@ -6,7 +6,7 @@ let msg = await message.channel.send("Generating icon...");
 if(!message.guild.iconURL) return msg.edit("No icon found!");
 
 let iconembed = new Discord.RichEmbed()
-.setColor("00ff00")
+.setColor("#fc9003")
 .setFooter("Searched by " + message.author.tag)
 .setImage(message.guild.iconURL)
 .setTitle("Icon")

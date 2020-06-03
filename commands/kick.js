@@ -4,7 +4,7 @@ module.exports.run = async (bot, message, args) => {
   if (!message.member.hasPermission("KICK_MEMBERS")  && message.author.id !== "291221132256870400") return message.channel.send("Sorry, you don't have permissions to use this!");
     
   let xdemb = new Discord.RichEmbed()
-  .setColor("#00ff00")
+  .setColor("#fc9003")
   .setTitle("Kick Command")
   .addField("Description:", `Kick a member`, true)
   .addField("Usage:", "!kick [user] [reason]", true)
@@ -30,7 +30,7 @@ module.exports.run = async (bot, message, args) => {
       .catch(error => message.reply(`Sorry, I couldn't kick because of : ${error}`));
 
       let kick = new Discord.RichEmbed()
-      .setColor("#00ff00")
+      .setColor("#fc9003")
       .setTitle(`Kick | ${member.user.tag}`)
       .addField("User", member, true)
       .addField("Moderator", message.author, true)

@@ -13,7 +13,7 @@ module.exports.run = async (bot, message, args) => {
 
    let contact = new Discord.RichEmbed()
    .setAuthor(Owner.username)
-   .setColor("00ff00")
+   .setColor("#fc9003")
    .setThumbnail(Owner.displayAvatarURL)
    .setTitle("Response  from your contact!")
    .addField("Response:", sayMessage)
@@ -23,7 +23,7 @@ module.exports.run = async (bot, message, args) => {
     bot.users.get(id).send(contact);
 
     let chanemb = new Discord.RichEmbed()
-    .setColor("#00ff00")
+    .setColor("#fc9003")
     .setDescription(`Message sent to <@${id}>`);
 
     message.channel.send(chanemb).then(msg => {msg.delete(5000)});

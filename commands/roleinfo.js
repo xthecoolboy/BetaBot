@@ -14,7 +14,7 @@ module.exports.run = async (bot, message, args) => {
       }
 
     let roleemebed = new Discord.RichEmbed()
-    .setColor("#00ff00")
+    .setColor("#fc9003")
     .addField("ID", gRole.id, inline )
     .addField("Name", gRole.name, inline)
     .addField("Mention", `\`<@${gRole.id}>\``, inline)

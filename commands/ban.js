@@ -5,7 +5,7 @@ const Discord = require("discord.js")
 module.exports.run = async (bot, message, args) => {
 
 let xdemb = new Discord.RichEmbed()
-        .setColor("#00ff00")
+        .setColor("#fc9003")
         .setTitle("Ban Command")
         .addField("Description:", `Ban a member`, true)
         .addField("Usage:", `!ban [user] [reason]`, true)
@@ -31,7 +31,7 @@ let xdemb = new Discord.RichEmbed()
         await member.ban(reason).catch(error => message.channel.send(`Sorry, I coldn't ban because of: ${error}`));
 
         let bean = new Discord.RichEmbed()
-        .setColor("#00ff00")
+        .setColor("#fc9003")
         .setTitle(`Ban | ${member.user.tag}`)
         .addField("User", member, true)
         .addField("Moderator", message.author, true)

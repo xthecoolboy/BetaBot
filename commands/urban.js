@@ -9,7 +9,7 @@ module.exports.run = async (bot, message, args) => {
         if(!json) return message.reply("No results found!")
 
         let urbEmbed = new Discord.RichEmbed()
-        .setColor("00ff00")
+        .setColor("#fc9003")
         .setTitle(json.word)
         .setDescription(json.definition)
         .addField("Upvotes", json.thumbs_up, true)
