@@ -1,6 +1,6 @@
 const Discord = require('discord.js');
 const fs = require("fs");
-
+const config = require('./config.json');
 exports.run = (client, message, args) => {
   if(!message.member.hasPermission("MANAGE_MESSAGES")) return message.reply("You don't have permissions to do that!");
   let reason = args.slice(1).join(' ');
@@ -10,7 +10,7 @@ exports.run = (client, message, args) => {
 
   let dmsEmbed = new Discord.RichEmbed()
   .setTitle("Warn")
-  .setColor("#fc9003")
+  .setColor(config.color)
   .setDescription(`You have been warned on \`${message.guild.name}\``)
   .addField("Warned by", message.author.tag)
   .addField("Reason", reason);

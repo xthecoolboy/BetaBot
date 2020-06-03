@@ -1,5 +1,6 @@
 const Discord = require("discord.js");
 const urban = require("urban");
+const config = require('./config.json');
 
 module.exports.run = async (bot, message, args) => {
     if(args.length < 1) return message.reply("Please enter something!");
@@ -9,7 +10,7 @@ module.exports.run = async (bot, message, args) => {
         if(!json) return message.reply("No results found!")
 
         let urbEmbed = new Discord.RichEmbed()
-        .setColor("#fc9003")
+        .setColor(config.color)
         .setTitle(json.word)
         .setDescription(json.definition)
         .addField("Upvotes", json.thumbs_up, true)

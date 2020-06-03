@@ -1,5 +1,6 @@
 const Discord = require("discord.js")
 const giphy = require('giphy-api')("W8g6R14C0hpH6ZMon9HV9FTqKs4o4rCk");
+const config = require('./config.json');
 
 module.exports.run = (bot, message, args) => {
   if (args.length === 0) {
@@ -16,7 +17,7 @@ module.exports.run = (bot, message, args) => {
     let id = res.data[0].id
     let msgurl = `https://media.giphy.com/media/${id}/giphy.gif`
     const embed = {
-      "color": 3066993,
+      "color": config.color,
       "timestamp": new Date(),
       "footer": {
         "icon_url": "https://raw.githubusercontent.com/Giphy/GiphyAPI/f68a8f1663f29dd9e8e4ea728421eb2977e42d83/api_giphy_logo_sparkle_clear.gif",

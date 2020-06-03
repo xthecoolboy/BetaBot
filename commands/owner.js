@@ -1,5 +1,5 @@
 const Discord = module.require("discord.js")
-
+const config = require('./config.json');
 module.exports.run = async (bot, message, args) => {
 
     let owner = message.mentions.members.first() || message.guild.members.get(args[0]);

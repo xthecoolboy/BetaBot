@@ -1,3 +1,5 @@
+const config = require('./config.json');
+
 module.exports.run = async (bot, message, args) => {
     if(!message.member.hasPermission("MANAGE_MESSAGES")) return message.channel.sendMessage("You don't have the `Manage Messages` premission")
 

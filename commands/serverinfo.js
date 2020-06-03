@@ -1,5 +1,5 @@
 const Discord = require("discord.js");
-
+const config = require('./config.json');
 module.exports.run = async (bot, message, args) => {
   const verlvl = {
     0: "None",
@@ -12,7 +12,7 @@ module.exports.run = async (bot, message, args) => {
     let inline = true
     let sicon = message.guild.iconURL;
     let serverembed = new Discord.RichEmbed()
-    .setColor("#fc9003")
+    .setColor(config.color)
     .setThumbnail(sicon)
     .setAuthor(message.guild.name)
     .addField("Name", message.guild.name, inline)

@@ -1,4 +1,5 @@
 const Discord = require("discord.js");
+const config = require('./config.json');
 
 module.exports.run = async (bot, message, args) => {
     let msg = await message.channel.send("Generating avatar...");
@@ -8,7 +9,7 @@ module.exports.run = async (bot, message, args) => {
         let embed = new Discord.RichEmbed()
 
         .setImage(mentionedUser.displayAvatarURL)
-        .setColor("#fc9003")
+        .setColor(config.color)
         .setTitle("Avatar")
         .setFooter("Searched by " + message.author.tag)
         .setDescription("[Avatar URL link]("+mentionedUser.displayAvatarURL+")");

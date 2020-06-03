@@ -1,6 +1,6 @@
 const Discord = module.require("discord.js")
 const weather = require("weather-js")
-
+const config = require('./config.json');
 module.exports.run = async (bot, message, args) => {
 
     weather.find({search: args.join(" "), degreeType: "C"}, function(err, result) {
@@ -8,7 +8,7 @@ module.exports.run = async (bot, message, args) => {
 
         //If the place entered is invalid
         if(result.length === 0) {
-            message.channel.send("**please enter a valid location**")
+            message.channel.send("**Please enter a valid location**")
             return;
         }
 
@@ -21,7 +21,7 @@ module.exports.run = async (bot, message, args) => {
            .setDescription(`**${current.skytext}**`) //How the sky looks like
            .setAuthor(`Weather for ${current.observationpoint}`) //Shows the current location of the weater
            .setThumbnail(current.imageUrl) //Sets thumbnail of the embed
-           .setColor("#fc9003") //Sets the color of the embed
+           .setColor(config.color) //Sets the color of the embed
            .addField("Timezone", `UTC${location.timezone}`, true) //Shows the timezone
            .addField("Degree Type", location.degreetype, true) //Shows the degrees in Celcius
            .addField("Temperature", `${current.temperature}`, true)

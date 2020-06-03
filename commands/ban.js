@@ -1,11 +1,11 @@
 const Discord = require("discord.js")
-
+const config = require('./config.json');
 //ban command
 
 module.exports.run = async (bot, message, args) => {
 
 let xdemb = new Discord.RichEmbed()
-        .setColor("#fc9003")
+        .setColor(config.color)
         .setTitle("Ban Command")
         .addField("Description:", `Ban a member`, true)
         .addField("Usage:", `!ban [user] [reason]`, true)
@@ -31,7 +31,7 @@ let xdemb = new Discord.RichEmbed()
         await member.ban(reason).catch(error => message.channel.send(`Sorry, I coldn't ban because of: ${error}`));
 
         let bean = new Discord.RichEmbed()
-        .setColor("#fc9003")
+        .setColor(config.color)
         .setTitle(`Ban | ${member.user.tag}`)
         .addField("User", member, true)
         .addField("Moderator", message.author, true)

@@ -1,5 +1,5 @@
 const Discord = require("discord.js");
-
+const config = require('./config.json');
 module.exports.run = async (bot, message, args) => {
     let inline = true
 
@@ -14,7 +14,7 @@ module.exports.run = async (bot, message, args) => {
       }
 
     let roleemebed = new Discord.RichEmbed()
-    .setColor("#fc9003")
+    .setColor(config.color)
     .addField("ID", gRole.id, inline )
     .addField("Name", gRole.name, inline)
     .addField("Mention", `\`<@${gRole.id}>\``, inline)

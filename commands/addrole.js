@@ -1,11 +1,12 @@
 const Discord = require("discord.js");
+const config = require('./config.json');
 
 module.exports.run = async (bot, message, args) => {
 
   //!addrole <@user> <Role>
   if(args[0] == "help"){
     let helpembxd = new Discord.RichEmbed()
-    .setColor("#fc9003")
+    .setColor(config.color)
     .addField("Addrole Command", "Usage: !addrole <@user> <role>")
 
     message.channel.send(helpembxd);
@@ -13,7 +14,7 @@ module.exports.run = async (bot, message, args) => {
   } 
 
   let xdemb = new Discord.RichEmbed()
-  .setColor("#fc9003")
+  .setColor(config.color)
   .setTitle(`Addrole command`)
   .addField("Description:", "Add role to member", true)
   .addField("Usage", "!addrole [user] [role]", true)

@@ -1,6 +1,6 @@
 const Discord = require("discord.js");
 const ms = require("ms");
-
+const config = require('./config.json');
 module.exports.run = async (bot, message, args) => {
 
   //!mute @user 1s/m/h/d
@@ -16,7 +16,7 @@ module.exports.run = async (bot, message, args) => {
     try{
       muterole = await message.guild.createRole({
         name: "Muted",
-        color: "#fc9003",
+        color: config.color,
         permissions:[]
       })
       message.guild.channels.forEach(async (channel, id) => {

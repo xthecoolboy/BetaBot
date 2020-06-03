@@ -1,6 +1,6 @@
 const Commando = require('discord.js-commando');
 const request = require('request'); 
-
+const config = require('./config.json');
 const Discord = require("discord.js")
 
 module.exports.run = async (bot, message, args) => {
@@ -8,7 +8,7 @@ module.exports.run = async (bot, message, args) => {
             if (!error && response.statusCode == 200) {
                     let emb = new Discord.RichEmbed()
                     .setImage(body)
-                    .setColor("#fc9003")
+                    .setColor(config.color)
                     .setTitle("Here is your random cat")
                               
                    message.channel.send(emb)  

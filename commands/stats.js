@@ -2,6 +2,7 @@
  const os = require('os')
  const cpuStat = require("cpu-stat");
  const moment = require("moment") 
+ const config = require('./config.json');
 
 
  module.exports.run = async (bot, message, args) => {
@@ -21,7 +22,7 @@
               //let duration = moment.duration(bot.uptime).format(" D [days], H [hrs], m [mins], s [secs]");
               let embedStats = new Discord.RichEmbed()
              .setTitle("*** Stats ***")
-             .setColor("#fc9003")
+             .setColor(config.color)
              .addField("• Mem Usage", `${(process.memoryUsage().heapUsed / 1024 / 1024).toFixed(2)} / ${(os.totalmem() / 1024 / 1024).toFixed(2)} MB`, true)
              .addField("• Uptime ", `${hours}h ${mins}m`, true) //`${duration}`, true)
              .addField("• Users", `${bot.users.size.toLocaleString()}`, true)

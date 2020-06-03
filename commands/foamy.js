@@ -1,4 +1,5 @@
 const Discord = require("discord.js");
+const config = require('./config.json');
 
 module.exports.run = async (bot, message, args) => {
 
@@ -6,7 +7,7 @@ module.exports.run = async (bot, message, args) => {
         embed: {
           title: "FOAMY IS ON TOP!",
           description: "Foamy Info",
-          color: 0x00ff00,
+          color: config.color,
           fields: [
             {
               name: "Who is Foamy??",

@@ -1,9 +1,10 @@
 const Discord = require("discord.js");
+const config = require('./config.json');
 
 module.exports.run = async (bot, message, args) => {
   if(args[0] == "help"){
     let helpembxd = new Discord.RichEmbed()
-    .setColor("#fc9003")
+    .setColor(config.color)
     .addField("clear Command", "Usage: !Clear <amount>")
 
     message.channel.send(helpembxd);

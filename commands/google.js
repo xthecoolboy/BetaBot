@@ -2,6 +2,7 @@ const cheerio = require('cheerio');
 const got = require('got');
 const { stringify } = require('querystring');
 const Discord = require("discord.js");
+const config = require('./config.json');
 
 exports.run = async (bot, msg, args) => {
     if(args.length < 1) msg.channel.send('I need to know what to search...');

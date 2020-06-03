@@ -1,9 +1,9 @@
 const Discord = require("discord.js");
-
+const config = require('./config.json');
 module.exports.run = async (bot, message, args) => {
   if(args[0] == "help"){
     let helpembxd = new Discord.RichEmbed()
-    .setColor("#fc9003")
+    .setColor(config.color)
     .addField("Removerole Command", "Usage: !removerole <@user> <role>")
 
     message.channel.send(helpembxd);
@@ -11,7 +11,7 @@ module.exports.run = async (bot, message, args) => {
   } 
 
   let xdemb = new Discord.RichEmbed()
-  .setColor("#fc9003")
+  .setColor(config.color)
   .setTitle(`Removerole command`)
   .addField("Description:", "Take role from member", true)
   .addField("Usage", "!removerole [user] [role]", true)

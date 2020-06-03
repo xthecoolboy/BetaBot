@@ -1,6 +1,7 @@
 const { Command } = require('discord.js-commando');
 const cows = require('cows');
 const rn = require('random-number');
+const config = require('./config.json');
 
 module.exports.run = async (bot, message, args) => {
 
