@@ -6,9 +6,9 @@
   "scripts": {
     "start": "nodemon index.js",
     "update": "git pull && npm install",
-    "swqpping": "nodemon code.js",
+    "betabot": "nodemon code.js",
     "test": "echo \"Error: no test specified\" && exit 1",
-    "all": "concurrently \"npm run start\" \"npm run swqpping\""
+    "all": "concurrently \"npm run start\" \"npm run betabot\""
   },
   "author": "Douile / Roque",
   "license": "GPL-3.0",
