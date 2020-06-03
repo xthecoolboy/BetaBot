@@ -8,7 +8,7 @@ Node.js Recommended 12.16.0 and up - https://nodejs.org/en/download/
 
 ## How to setup
 
-Make a bot here and grab the token
+Go to Discord Developer portal and create a bot and copy the token
 
 Fill in the required spots, such as token, prefix and change anything you like in config.json.
 
