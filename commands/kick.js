@@ -1,5 +1,7 @@
 const Discord = require("discord.js")
 const config = require('../config.json');
+const { USERPREFIX } = require('../config.json');
+
 module.exports.run = async (bot, message, args) => {
   
 
@@ -9,8 +11,8 @@ module.exports.run = async (bot, message, args) => {
   .setColor(config.COLOR)
   .setTitle("Kick Command")
   .addField("Description:", `Kick a member`, true)
-  .addField("Usage:", "!kick [user] [reason]", true)
-  .addField("Example:" ,"!kick @BetaBot spam")
+  .addField(`Usage:", ${USERPREFIX}kick [user] [reason]`, true)
+  .addField(`Example:", ${USERPREFIX}kick @BetaBot spam`)
 
     let member = message.mentions.members.first();
     if(!member) return message.channel.send(xdemb)

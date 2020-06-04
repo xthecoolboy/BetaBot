@@ -7,7 +7,6 @@ module.exports.run = async (bot, message, args) => {
     let hours = Math.floor(totalSeconds / 3600);
     totalSeconds %= 3600;
     let minutes = Math.floor(totalSeconds / 60);
-    // let seconds = totalSeconds % 60; // Not added as there's not need for seconds.
 
     let uptimeEmbed = new Discord.RichEmbed()
     .setDescription(`${bot.user.username} Bot Uptime`)

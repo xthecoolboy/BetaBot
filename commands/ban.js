@@ -1,5 +1,6 @@
 const Discord = require("discord.js")
 const config = require('../config.json');
+const { USERPREFIX } = require('../config.json');
 //ban command
 
 module.exports.run = async (bot, message, args) => {
@@ -8,8 +9,8 @@ let xdemb = new Discord.RichEmbed()
         .setColor(config.COLOR)
         .setTitle("Ban Command")
         .addField("Description:", `Ban a member`, true)
-        .addField("Usage:", `!ban [user] [reason]`, true)
-        .addField("Example:", `!ban @BetaBot spam`)
+        .addField("Usage:", `${USERPREFIX}ban [user] [reason]`, true)
+        .addField("Example:", `${USERPREFIX}ban @BetaBot spam`)
 
         const logEmbed = new Discord.RichEmbed()
         .setAuthor(`User Banned`)

@@ -1,5 +1,6 @@
 const Discord = require("discord.js")
 const config = require('../config.json');
+const { USERPREFIX } = require('../config.json');
 
 module.exports.run = async (bot, message, args) => {
 
@@ -8,7 +9,7 @@ module.exports.run = async (bot, message, args) => {
  const noAmount = new Discord.RichEmbed()
     .setColor(config.COLOR)
     .setTitle("🚫 Please specify an amount of messages to clear")
-    .setDescription(`Usage - /purge <amount>`)
+    .setDescription(`Usage - ${USERPREFIX}purge <amount>`)
     .setFooter(`Due to limitations by Discord, this must be below 100 and newer than 2 weeks`)
  const deleteCount = parseInt(args[0], 10);
 

@@ -1,5 +1,6 @@
 const Discord = require("discord.js")
 const config = require('../config.json');
+const { USERPREFIX } = require('../config.json');
 
 module.exports.run = async (bot, message, args) => {
     message.delete();
@@ -7,7 +8,7 @@ module.exports.run = async (bot, message, args) => {
 
     if(!message.member.hasPermission("MANAGE_MESSAGES")) return message.channel.send(config.NO_PERMS_MESSAGE).then(msg => msg.delete(10000));
     if (args.length === 0)
-    return message.reply('**Invalid Format:** `!poll <question>`')
+    return message.reply(`**Invalid Format:** ${USERPREFIX}poll <question>`)
 
     const pollembed = new Discord.RichEmbed()
     .setTitle("A Poll Has Been Started!")
