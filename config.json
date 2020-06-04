@@ -5,5 +5,6 @@
     "LOGS_CHANNEL": "applications",
     "MUTED_ROLE": "Muted",
     "WELCOME_CHANNEL": "692954949835030528",
-    "LEAVE_CHANNEL": "692954949835030528"
+    "LEAVE_CHANNEL": "692954949835030528",
+    "NO_PERMS_MESSAGE": "Sorry, you don't have permissions to use this!"
 }

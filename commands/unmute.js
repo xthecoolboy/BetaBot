@@ -1,7 +1,7 @@
 const config = require('../config.json');
 
 module.exports.run = async (bot, message, args) => {
-    if (!message.member.hasPermission("MANAGE_MESSAGES")) return message.channel.send("Sorry, you don't have permissions to use this!");
+    if (!message.member.hasPermission("MANAGE_MESSAGES")) return message.channel.send(config.NO_PERMS_MESSAGE);
 
 
     const logEmbed = new Discord.RichEmbed()

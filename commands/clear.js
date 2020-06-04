@@ -3,7 +3,7 @@ const config = require('../config.json');
 
 module.exports.run = async (bot, message, args) => {
 
-	if(!message.member.hasPermission("MANAGE_MESSAGES")) return message.reply("You don't have permission to use this command!");
+	if(!message.member.hasPermission("MANAGE_MESSAGES")) return message.reply(config.NO_PERMS_MESSAGE);
  
  const noAmount = new Discord.RichEmbed()
     .setColor(config.COLOR)

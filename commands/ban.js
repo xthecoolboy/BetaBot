@@ -20,7 +20,7 @@ let xdemb = new Discord.RichEmbed()
         .addField("Reason", `${res}`)
         let logsChannel = message.guild.channels.find(channel => channel.name === config.LOGS_CHANNEL);
 
-        if(!message.member.hasPermission("BAN_MEMBERS")) return message.channel.send("Sorry you don't have permission to use this!");
+        if(!message.member.hasPermission("BAN_MEMBERS")) return message.channel.send(config.NO_PERMS_MESSAGE);
 
         let member = message.mentions.members.first();
         if(!member) return message.channel.send(xdemb)
