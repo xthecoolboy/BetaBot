@@ -5,8 +5,8 @@ exports.run = (client, message, args) => {
   if (!message.member.hasPermission("KICK_MEMBERS")) return message.channel.send(config.NO_PERMS_MESSAGE);
   let reason = args.slice(1).join(' ');
   let user = message.mentions.users.first();
-  if (message.mentions.users.size < 1) return message.reply('You must mention someone to warn.');
-  if (reason.length < 1) return message.reply('You must provide a reason.');
+  if (message.mentions.users.size < 1) return message.reply('You must mention someone to warn.'); //First args missing message
+  if (reason.length < 1) return message.reply('You must provide a reason.'); //Reason message
 
   const logEmbed = new Discord.RichEmbed()
   .setAuthor(`User Warned`)
@@ -28,7 +28,7 @@ exports.run = (client, message, args) => {
 
   message.delete();
   
-  message.channel.send(`${user.tag} has been warned`)
+  message.channel.send(`${user.tag} has been warned`) //Channel warn message
 
 }
 
