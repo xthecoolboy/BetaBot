@@ -2,7 +2,7 @@
     "USERPREFIX":"/",
     "BOT_TOKEN":"Put your bot token here",
     "COLOR": "#fc9003",
-    "LOGS_CHANNEL": "applications",
+    "LOGS_CHANNEL": "logs",
     "MUTED_ROLE": "Muted",
     "WELCOME_CHANNEL": "692954949835030528",
     "LEAVE_CHANNEL": "692954949835030528",
