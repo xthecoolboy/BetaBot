@@ -10,9 +10,9 @@ module.exports.run = async (bot, message, args) => {
   let xdemb = new Discord.RichEmbed()
   .setColor(config.COLOR)
   .setTitle("Kick Command")
-  .addField("Description:", `Kick a member`, true)
-  .addField(`Usage:", ${USERPREFIX}kick [user] [reason]`, true)
-  .addField(`Example:", ${USERPREFIX}kick @BetaBot spam`)
+  .addField("Description:", "Kick a member", true)
+  .addField("Usage:", `${USERPREFIX}kick [user] [reason]`, true)
+  .addField("Example:", `${USERPREFIX}kick @BetaBot spam`, true)
 
     let member = message.mentions.members.first();
     if(!member) return message.channel.send(xdemb)
