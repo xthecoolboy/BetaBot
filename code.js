@@ -1,9 +1,18 @@
 const { Client, Collection } = require('discord.js');
 const { readdir } = require('fs');
+const Discord = require('discord.js');
+const client = new Discord.Client();
+const config = require("./config.json");
 const { BOT_TOKEN, USERPREFIX } = require('./config.json');
     const user = new Client();
     user.commands = new Collection();
 
+
+  //bot.on('message', message => {
+    //if (message.author.bot) return
+        //if(config.FILTER_LIST.some(word => message.content.toLowerCase().includes(word))){
+      //message.delete().catch(console.error);
+    //}})
 
 readdir("./commands/", (err, files) => {
     if (err) console.error(err);
@@ -23,15 +32,6 @@ readdir('./events/', (err, files) => {
       user.on(evtName, evt.bind(null, user));
     });
   });
-
-// Coming soon..
-
-  //client.on('message', message => {
-  	//if (message.author.bot) return
-        //if(config.FILTER_LIST.some(word => message.content.toLowerCase().includes(word))){
-      //message.delete()
-      //message.author.send(`I have deleted your message from ${message.channel}, if you believe this is in error please contact staff.`).catch(console.error);
-    //}})
 
   user.on("message", async message => {
     if(message.author.bot) return;

@@ -50,6 +50,7 @@ module.exports.run = async (bot, message, args) => {
 
         message.channel.send(chatlog)
         logsChannel.send(logEmbed)
+        console.log(`${member.user.tag} was banned by ${message.author}`);
 
         message.delete()
 

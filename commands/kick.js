@@ -42,6 +42,7 @@ module.exports.run = async (bot, message, args) => {
       .setFooter(member.id)
 
       message.channel.send(kick)
+      console.log(`${member.user.tag} was kicked by ${message.author}`);
 
     message.delete();
     
