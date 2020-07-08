@@ -24,6 +24,14 @@ readdir('./events/', (err, files) => {
     });
   });
 
+// Coming soon..
+
+  //client.on('message', message => {
+  	//if (message.author.bot) return
+        //if(config.FILTER_LIST.some(word => message.content.toLowerCase().includes(word))){
+      //message.delete()
+      //message.author.send(`I have deleted your message from ${message.channel}, if you believe this is in error please contact staff.`).catch(console.error);
+    //}})
 
   user.on("message", async message => {
     if(message.author.bot) return;
