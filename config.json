@@ -1,6 +1,6 @@
 { 
     "USERPREFIX":"/",
-    "BOT_TOKEN":"Put your token here!",
+    "BOT_TOKEN":"Put your bot token here!",
     "COLOR": "#fc9003",
     "LOGS_CHANNEL": "logs",
     "MUTED_ROLE": "Muted",

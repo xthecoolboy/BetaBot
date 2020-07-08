@@ -27,7 +27,7 @@ readdir('./events/', (err, files) => {
 
   user.on("message", async message => {
     if(message.author.bot) return;
-    if(message.channel.type === "dm") return;
+    if(message.channel.type === "dm") return message.reply("Hey! how are you?")
 
         let prefix = USERPREFIX;
 
