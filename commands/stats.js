@@ -22,7 +22,7 @@
               //let duration = moment.duration(bot.uptime).format(" D [days], H [hrs], m [mins], s [secs]");
               let embedStats = new Discord.RichEmbed()
              .setTitle("*** Stats ***")
-             .setColor(config.COLOR)
+             .setColor(config["bot_setup"].EMBED_COLORS)
              .addField("• Mem Usage", `${(process.memoryUsage().heapUsed / 1024 / 1024).toFixed(2)} / ${(os.totalmem() / 1024 / 1024).toFixed(2)} MB`, true)
              .addField("• Uptime ", `${hours}h ${mins}m`, true) //`${duration}`, true)
              .addField("• Users", `${bot.users.size.toLocaleString()}`, true)

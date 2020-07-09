@@ -1,10 +1,17 @@
 { 
-    "USERPREFIX":"/",
-    "BOT_TOKEN":"Put your bot token here!",
-    "COLOR": "#fc9003",
-    "LOGS_CHANNEL": "logs",
-    "MUTED_ROLE": "Muted",
-    "WELCOME_CHANNEL": "69295494983503052",
-    "LEAVE_CHANNEL": "69295494983503052",
-    "NO_PERMS_MESSAGE": "Sorry, you don't have permissions to use this!"
+    "bot_setup": {
+        "USERPREFIX":"/",
+        "BOT_TOKEN":"Put your bot token here!",
+        "EMBED_COLORS": "#fc9003",
+        "MUTED_ROLE": "Muted",
+        "NO_PERMS_MESSAGE": "Sorry, you don't have permissions to use this!",
+        "ENABLE_MEMBER_COUNT": true
+    },
+
+    "channel_setup": {
+        "WELCOME_CHANNEL": "692954944340361246",
+        "LEAVE_CHANNEL": "692954944340361246",
+        "LOGS_CHANNEL": "692954949835030528",
+        "MEMBER_COUNT_CHANNEL": "730571080304951357"
+    }
 }

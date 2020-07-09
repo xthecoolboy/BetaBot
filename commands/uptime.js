@@ -10,7 +10,7 @@ module.exports.run = async (bot, message, args) => {
 
     let uptimeEmbed = new Discord.RichEmbed()
     .setDescription(`${bot.user.username} Bot Uptime`)
-    .setColor(config.COLOR)
+    .setColor(config["bot_setup"].EMBED_COLORS)
     .addField("Hours", hours)
     .addField("Minutes", minutes)
     .setTimestamp()

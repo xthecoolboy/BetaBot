@@ -1,9 +1,9 @@
 const Discord = require("discord.js")
-const config = require("../config.json")
-const { USERPREFIX } = require('../config.json');
+const config = require('../config.json');
  
 module.exports.run = async (bot, message, args) => {
 
+const USERPREFIX = config["bot_setup"].USERPREFIX
 
 const helpembed = new Discord.RichEmbed()
 .setTitle(`BetaBot's Prefix is: ${USERPREFIX}`)
@@ -63,9 +63,11 @@ ${USERPREFIX}setstatus
 ${USERPREFIX}embed
 
 `)
-.setColor(config.COLOR);
+.setColor(config["bot_setup"].EMBED_COLORS)
+.setFooter("© 2020 BetaBot");
 
-message.channel.send(helpembed)
+message.channel.send(helpembed).then(msg => msg.delete(15000));
+message.delete().catch();
 
 }
 module.exports.help = {

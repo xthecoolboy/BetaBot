@@ -1,14 +1,13 @@
 const Discord = require("discord.js")
 const config = require('../config.json');
-const { USERPREFIX } = require('../config.json');
+const USERPREFIX = config["bot_setup"].USERPREFIX
 
 module.exports.run = async (bot, message, args) => {
   
-
-  if (!message.member.hasPermission("KICK_MEMBERS")) return message.channel.send(config.NO_PERMS_MESSAGE);
+  if (!message.member.hasPermission("KICK_MEMBERS")) return message.channel.send(config["bot_setup"].NO_PERMS_MESSAGE);
     
   let xdemb = new Discord.RichEmbed()
-  .setColor(config.COLOR)
+  .setColor(config["bot_setup"].EMBED_COLORS)
   .setTitle("Kick Command")
   .addField("Description:", "Kick a member", true)
   .addField("Usage:", `${USERPREFIX}kick [user] [reason]`, true)
@@ -22,22 +21,17 @@ module.exports.run = async (bot, message, args) => {
 
     
     let reason = args.slice(1).join(' ');
-    if(!reason) {
-      res = "No reason given";
-    }
-    else {
-      res = `${reason}`
-    }
+    if(!reason) return message.channel.send("Please provide a reason to kick this user!")
     
     await member.kick(reason)
       .catch(error => message.reply(`Sorry, I couldn't kick because of : ${error}`));
 
       let kick = new Discord.RichEmbed()
-      .setColor(config.COLOR)
+      .setColor(config["bot_setup"].EMBED_COLORS)
       .setTitle(`Kick | ${member.user.tag}`)
       .addField("User", member, true)
       .addField("Moderator", message.author, true)
-      .addField("Reason", res)
+      .addField("Reason", reason)
       .setTimestamp()
       .setFooter(member.id)
 

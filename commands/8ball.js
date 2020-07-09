@@ -13,9 +13,10 @@
     let ballembed = new Discord.RichEmbed()
 
     .setAuthor(message.author.username)
-    .setColor(config.COLOR)
+    .setColor(config["bot_setup"].EMBED_COLORS)
     .addField("Question", question)
-    .addField("Answer", replies[result]);
+    .addField("Answer", replies[result])
+    .setFooter("© 2020 BetaBot");
 
     message.channel.send(ballembed)
 

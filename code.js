@@ -1,19 +1,12 @@
 const { Client, Collection } = require('discord.js');
 const { readdir } = require('fs');
-const Discord = require('discord.js');
-const client = new Discord.Client();
-const config = require("./config.json");
-const { BOT_TOKEN, USERPREFIX } = require('./config.json');
+const Discord = require('discord.js')
+const config = require("./config.json")
+const bot = new Discord.Client({disableEveryone: true});
     const user = new Client();
     user.commands = new Collection();
 
-
-  //bot.on('message', message => {
-    //if (message.author.bot) return
         //if(config.FILTER_LIST.some(word => message.content.toLowerCase().includes(word))){
-      //message.delete().catch(console.error);
-    //}})
-
 readdir("./commands/", (err, files) => {
     if (err) console.error(err);
     let jsfiles = files.filter(f => f.split(".").pop() === "js");
@@ -37,7 +30,7 @@ readdir('./events/', (err, files) => {
     if(message.author.bot) return;
     if(message.channel.type === "dm") return message.reply("Hey! how are you?")
 
-        let prefix = USERPREFIX;
+        let prefix = config["bot_setup"].USERPREFIX;
 
     if(!message.content.startsWith(prefix)) return; 
 
@@ -52,4 +45,4 @@ readdir('./events/', (err, files) => {
 
   console.log(`\x1b[42mINFO\x1b[40m \x1b[32mSuccesfully Started BetaBot!\x1b[37m`)
 
-  user.login(BOT_TOKEN)
+  user.login(config["bot_setup"].BOT_TOKEN)

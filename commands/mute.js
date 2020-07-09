@@ -7,7 +7,7 @@ module.exports.run = async (bot, message, args) => {
 
   let tomute = message.guild.member(message.mentions.users.first() || message.guild.members.get(args[0]));
   if(!tomute) return message.channel.send("Please tag a user to mute!");
-  if (!message.member.hasPermission("MANAGE_MESSAGES")) return message.channel.send(config.NO_PERMS_MESSAGE);
+  if (!message.member.hasPermission("MANAGE_MESSAGES")) return message.channel.send(config["bot_setup"].NO_PERMS_MESSAGE);
   if(tomute.hasPermission("MANAGE_MESSAGES")) return message.channel.send("I can't mute this user");
   if (tomute.id === message.author.id) return message.channel.send("You cannot mute yourself!");
   let muterole = message.guild.roles.find(`name`, config.muted_role);
@@ -16,7 +16,7 @@ module.exports.run = async (bot, message, args) => {
     try{
       muterole = await message.guild.createRole({
         name: config.MUTED_ROLE,
-        color: config.COLOR,
+        color: config["bot_setup"].EMBED_COLORS,
         permissions:[]
       })
       message.guild.channels.forEach(async (channel, id) => {

@@ -4,10 +4,10 @@ const { USERPREFIX } = require('../config.json');
 
 module.exports.run = async (bot, message, args) => {
 
-	if(!message.member.hasPermission("MANAGE_MESSAGES")) return message.reply(config.NO_PERMS_MESSAGE);
+	if(!message.member.hasPermission("MANAGE_MESSAGES")) return message.reply(config["bot_setup"].NO_PERMS_MESSAGE);
  
  const noAmount = new Discord.RichEmbed()
-    .setColor(config.COLOR)
+    .setColor(config["bot_setup"].EMBED_COLORS)
     .setTitle("🚫 Please specify an amount of messages to clear")
     .setDescription(`Usage - ${USERPREFIX}purge <amount>`)
     .setFooter(`Due to limitations by Discord, this must be below 100 and newer than 2 weeks`)
@@ -15,11 +15,14 @@ module.exports.run = async (bot, message, args) => {
 
  const logEmbed = new Discord.RichEmbed()
     .setAuthor(`Channel Purged`)
-    .setColor(config.COLOR)
+    .setColor(config["bot_setup"].EMBED_COLORS)
     .addField("Executor", `<@${message.author.id}>`)
     .addField("Deleted", `${deleteCount}`)
     .addField("Channel", `${message.channel}`)
-    let logsChannel = message.guild.channels.find(channel => channel.name === config.LOGS_CHANNEL);
+    .setFooter("© 2020 BetaBot");
+    //let logsChannel = message.guild.channels.find(channel => channel.name === config.LOGS_CHANNEL);
+    let logsChannel = message.guild.channels.find(`id`, config["channel_setup"].LOGS_CHANNEL);
+    if(!logsChannel) return message.channel.send(`❌ Logs channel not set, you can change this in config.json`);
 	{
 		if (args[0])
 		{

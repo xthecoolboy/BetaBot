@@ -14,7 +14,7 @@ module.exports.run = async (bot, message, args) => {
       }
 
     let roleemebed = new Discord.RichEmbed()
-    .setColor(config.COLOR)
+    .setColor(config["bot_setup"].EMBED_COLORS)
     .addField("ID", gRole.id, inline )
     .addField("Name", gRole.name, inline)
     .addField("Mention", `\`<@${gRole.id}>\``, inline)
@@ -24,7 +24,7 @@ module.exports.run = async (bot, message, args) => {
     .addField("Hoisted", status[gRole.hoist], inline)
     .addField("Mentionable", status[gRole.mentionable], inline)
     .addField("Managed", status[gRole.managed], inline)
-    
+    .setFooter("© 2020 BetaBot");
     message.channel.send(roleemebed);
 
 }

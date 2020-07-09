@@ -21,7 +21,7 @@ if (member.user.bot === true) {
 
             let embed = new Discord.RichEmbed()
                 .setThumbnail((target.displayAvatarURL))
-                .setColor(config.COLOR)
+                .setColor(config["bot_setup"].EMBED_COLORS)
                 .addField("Full Username", `${member.user.tag}`, inline)
                 .addField("ID", member.user.id, inline)
                 .addField("Nickname", `${member.nickname !== null ? `Nickname: ${member.nickname}` : "None"}`, true)

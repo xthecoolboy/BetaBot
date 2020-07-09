@@ -15,14 +15,14 @@ module.exports.run = async (bot, message, args) => {
             .setFooter("You Won!", aicon)
             .setTitle(':slot_machine:Slots:slot_machine:')
             .addField('Result:', slots[result1] + slots[result2] + slots[result3], true)
-            .setColor(config.COLOR)
+            .setColor(config["bot_setup"].EMBED_COLORS)
         message.channel.send(wEmbed).then(msg => msg.delete(10000));
     } else {
         let embed = new Discord.RichEmbed()
             .setFooter('You Lost!', aicon)
             .setTitle(':slot_machine:Slots:slot_machine:')
             .addField('Result', slots[result1] + slots[result2] + slots[result3], true)
-            .setColor(config.COLOR)
+            .setColor(config["bot_setup"].EMBED_COLORS)
         message.channel.send(embed).then(msg => msg.delete(10000));
     }
 }

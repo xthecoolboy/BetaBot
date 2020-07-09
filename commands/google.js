@@ -45,7 +45,8 @@ exports.run = async (bot, msg, args) => {
         if(value) {
             card.addField(`This is what I also found for: "${params.q}" `, value)
                 .setColor(bot.utils.randomColor())
-                .setURL(`https://google.com/search?q=${encodeURIComponent(params.q)}`);
+                .setURL(`https://google.com/search?q=${encodeURIComponent(params.q)}`)
+                .setFooter("© 2020 BetaBot");
         }
         return await msg.channel.send(card);
     }

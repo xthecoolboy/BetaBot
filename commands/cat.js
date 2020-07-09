@@ -8,8 +8,9 @@ module.exports.run = async (bot, message, args) => {
             if (!error && response.statusCode == 200) {
                     let emb = new Discord.RichEmbed()
                     .setImage(body)
-                    .setColor(config.COLOR)
+                    (config["bot_setup"].EMBED_COLORS)
                     .setTitle("Here is your random cat")
+                    .setFooter("© 2020 BetaBot");
                               
                    message.channel.send(emb)  
             }

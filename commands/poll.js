@@ -6,13 +6,13 @@ module.exports.run = async (bot, message, args) => {
     message.delete();
     let question = args.slice(0).join(" ");
 
-    if(!message.member.hasPermission("MANAGE_MESSAGES")) return message.channel.send(config.NO_PERMS_MESSAGE).then(msg => msg.delete(10000));
+    if(!message.member.hasPermission("MANAGE_MESSAGES")) return message.channel.send(config["bot_setup"].NO_PERMS_MESSAGE).then(msg => msg.delete(10000));
     if (args.length === 0)
     return message.reply(`**Invalid Format:** ${USERPREFIX}poll <question>`)
 
     const pollembed = new Discord.RichEmbed()
     .setTitle("A Poll Has Been Started!")
-    .setColor(config.COLOR)
+    .setColor(config["bot_setup"].EMBED_COLORS)
     .setDescription(`${question}`)
     .setFooter(`Poll Started By: ${message.author.username}`, `${message.author.avatarURL}`)
   
