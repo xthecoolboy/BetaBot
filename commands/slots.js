@@ -1,5 +1,5 @@
 const Discord = require("discord.js");
-const botconfig = require("../config.json");
+const config = require("../config.json");
 
 module.exports.run = async (bot, message, args) => {
 
@@ -11,19 +11,19 @@ module.exports.run = async (bot, message, args) => {
     let aicon = message.author.displayAvatarURL;
 
     if (slots[result1] === slots[result2] && slots[result3]) {
-        let wEmbed = new Discord.RichEmbed()
+        let wEmbed = new Discord.MessageEmbed()
             .setFooter("You Won!", aicon)
             .setTitle(':slot_machine:Slots:slot_machine:')
             .addField('Result:', slots[result1] + slots[result2] + slots[result3], true)
-            .setColor(config["bot_setup"].EMBED_COLORS)
-        message.channel.send(wEmbed).then(msg => msg.delete(10000));
+            .setColor(config.bot_setup.EMBED_COLORS)
+        message.channel.send(wEmbed).then(msg => msg.delete({ timeout: 10000 }));
     } else {
-        let embed = new Discord.RichEmbed()
+        let embed = new Discord.MessageEmbed()
             .setFooter('You Lost!', aicon)
             .setTitle(':slot_machine:Slots:slot_machine:')
             .addField('Result', slots[result1] + slots[result2] + slots[result3], true)
-            .setColor(config["bot_setup"].EMBED_COLORS)
-        message.channel.send(embed).then(msg => msg.delete(10000));
+            .setColor(config.bot_setup.EMBED_COLORS)
+        message.channel.send(embed).then(msg => msg.delete({ timeout: 10000 }));
     }
 }
 

@@ -4,8 +4,8 @@ const config = require('../config.json');
 exports.run = (bot, message, args) => {
     if (args.length < 1) return message.channel.send("Please provide some text to Mock")
 
-    let mockEmbed = new Discord.RichEmbed()
-    .setColor(config["bot_setup"].EMBED_COLORS)
+    let mockEmbed = new Discord.MessageEmbed()
+    .setColor(config.bot_setup.EMBED_COLORS)
     .setDescription(args.map(randomizeCase))
     .setImage("https://cdn.discordapp.com/attachments/424889733043191810/425242569325150208/mock.jpg")
 

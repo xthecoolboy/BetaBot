@@ -9,8 +9,8 @@ module.exports.run = async (bot, message, args) => {
     urban(XD).first(json => {
         if(!json) return message.reply("No results found!")
 
-        let urbEmbed = new Discord.RichEmbed()
-        .setColor(config["bot_setup"].EMBED_COLORS)
+        let urbEmbed = new Discord.MessageEmbed()
+        .setColor(config.bot_setup.EMBED_COLORS)
         .setTitle(json.word)
         .setDescription(json.definition)
         .addField("Upvotes", json.thumbs_up, true)

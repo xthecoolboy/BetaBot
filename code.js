@@ -25,11 +25,18 @@ readdir('./events/', (err, files) => {
     });
   });
 
+
+  user.on('message', message => {
+  	if (message.author.bot) return
+        if(config.bot_setup.FILTER_LIST.some(word => message.content.toLowerCase().includes(word))){
+      message.delete()
+    }})
+
   user.on("message", async message => {
     if(message.author.bot) return;
     if(message.channel.type === "dm") return message.reply("Hey! how are you?")
 
-        let prefix = config["bot_setup"].USERPREFIX;
+        let prefix = config.bot_setup.USERPREFIX;
 
     if(!message.content.startsWith(prefix)) return; 
 
@@ -42,6 +49,4 @@ readdir('./events/', (err, files) => {
 
   });
 
-  console.log(`\x1b[42mINFO\x1b[40m \x1b[32mSuccesfully Started BetaBot!\x1b[37m`)
-
-  user.login(config["bot_setup"].BOT_TOKEN)
+  user.login(config.bot_setup.BOT_TOKEN)

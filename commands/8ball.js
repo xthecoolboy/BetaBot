@@ -10,10 +10,10 @@
     let result = Math.floor((Math.random() * replies.length));
     let question = args.join(" ");
 
-    let ballembed = new Discord.RichEmbed()
+    let ballembed = new Discord.MessageEmbed()
 
     .setAuthor(message.author.username)
-    .setColor(config["bot_setup"].EMBED_COLORS)
+    .setColor(config.bot_setup.EMBED_COLORS)
     .addField("Question", question)
     .addField("Answer", replies[result])
     .setFooter("© 2020 BetaBot");

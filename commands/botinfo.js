@@ -4,12 +4,12 @@ const config = require('../config.json');
 module.exports.run = async (bot, message, args) => {
     let inline = true
     let bicon = bot.user.displayAvatarURL;
-    let usersize = bot.users.size
-    let chansize = bot.channels.size
+    let usersize = bot.users.cache.size
+    let chansize = bot.channels.cache.size
     let uptimxd = bot.uptime 
-    let servsize = bot.guilds.size
-    let botembed = new Discord.RichEmbed()
-    .setColor(config["bot_setup"].EMBED_COLORS)
+    let servsize = bot.guilds.cache.size
+    let botembed = new Discord.MessageEmbed()
+    .setColor(config.bot_setup.EMBED_COLORS)
     .setThumbnail(bicon)
     .addField("Bot Name", `${bot.user.username}`, inline)
     .addField("Bot Owner", "<@273853055869517825>", inline )

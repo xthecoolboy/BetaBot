@@ -1,8 +1,7 @@
+const { Message } = require("discord.js");
 
 exports.run = function (bot, msg, args) {
-    if (args.length < 1) {
-        throw 'You must input text to be reversed!';
-    }
+    if (args.length < 1) return msg.channel.send("Please input a text to reverse!")
     msg.reply(args.join(' ').split('').reverse().join(''));
 
 

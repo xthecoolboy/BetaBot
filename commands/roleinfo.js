@@ -5,16 +5,16 @@ module.exports.run = async (bot, message, args) => {
 
     let role = args.join(` `)
     if(!role) return message.reply("Specify a role!");
-    let gRole = message.guild.roles.find(`name`, role);
-    if(!gRole) return message.reply("Couldn't find that role.");
+    let gRole = message.guild.roles.cache.get(role);
+    if(!gRole) return message.reply("Couldn't find that role. it must be the role ID");
 
     const status = {
         false: "No",
         true: "Yes"
       }
 
-    let roleemebed = new Discord.RichEmbed()
-    .setColor(config["bot_setup"].EMBED_COLORS)
+    let roleemebed = new Discord.MessageEmbed()
+    .setColor(config.bot_setup.EMBED_COLORS)
     .addField("ID", gRole.id, inline )
     .addField("Name", gRole.name, inline)
     .addField("Mention", `\`<@${gRole.id}>\``, inline)

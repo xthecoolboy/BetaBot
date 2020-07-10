@@ -1,6 +1,6 @@
 module.exports.run = async (bot, message, args) => {
     
-    if (!message.member.hasPermission("MANAGE_MESSAGES")) return message.channel.send(config["bot_setup"].NO_PERMS_MESSAGE);
+    if (!message.member.hasPermission("MANAGE_MESSAGES")) return message.channel.send(config.bot_setup.NO_PERMS_MESSAGE);
     
     const sayMessage = args.join(" ");
     message.delete().catch(O_o=>{}); 

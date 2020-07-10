@@ -7,8 +7,8 @@ module.exports.run = async (bot, message, args) => {
 
   if(!message.member.hasPermission("BAN_MEMBERS")) return message.channel.send(config["bot_setup"].NO_PERMS_MESSAGE);
 
-        const xdemb = new Discord.RichEmbed()
-        .setColor(config["bot_setup"].EMBED_COLORS)
+        const xdemb = new Discord.MessageEmbed()
+        .setColor(config.bot_setup.EMBED_COLORS)
         .setTitle("Ban Command")
         .addField("Description:", `Ban a member`, true)
         .addField("Usage:", `${USERPREFIX}ban [user] [reason]`, true)
@@ -20,9 +20,9 @@ module.exports.run = async (bot, message, args) => {
        
         if(!reason) return message.channel.send("Please provide a reason to ban this user!")
 
-        const logEmbed = new Discord.RichEmbed()
+        const logEmbed = new Discord.MessageEmbed()
         .setAuthor(`User Banned`)
-        .setColor(config["bot_setup"].EMBED_COLORS)
+        .setColor(config.bot_setup.EMBED_COLORS)
         .addField("Executor", `<@${message.author.id}>`)
         .addField("User banned", `${member}`)
         .addField("Channel", `${message.channel}`)
@@ -40,8 +40,8 @@ module.exports.run = async (bot, message, args) => {
 
         await member.ban(reason).catch(error => message.channel.send(`Sorry, I couldn't ban because of: ${error}`));
 
-        const chatlog = new Discord.RichEmbed()
-        .setColor(config["bot_setup"].EMBED_COLORS)
+        const chatlog = new Discord.MessageEmbed()
+        .setColor(config.bot_setup.EMBED_COLORS)
         .setTitle(`Ban | ${member.user.tag}`)
         .addField("User", member, true)
         .addField("Moderator", message.author, true)

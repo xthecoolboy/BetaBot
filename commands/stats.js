@@ -20,14 +20,14 @@
              let mins = Math.floor((bot.uptime / 60) % 60);
      
               //let duration = moment.duration(bot.uptime).format(" D [days], H [hrs], m [mins], s [secs]");
-              let embedStats = new Discord.RichEmbed()
+              let embedStats = new Discord.MessageEmbed()
              .setTitle("*** Stats ***")
-             .setColor(config["bot_setup"].EMBED_COLORS)
+             .setColor(config.bot_setup.EMBED_COLORS)
              .addField("• Mem Usage", `${(process.memoryUsage().heapUsed / 1024 / 1024).toFixed(2)} / ${(os.totalmem() / 1024 / 1024).toFixed(2)} MB`, true)
              .addField("• Uptime ", `${hours}h ${mins}m`, true) //`${duration}`, true)
-             .addField("• Users", `${bot.users.size.toLocaleString()}`, true)
-             .addField("• Servers", `${bot.guilds.size.toLocaleString()}`, true)
-             .addField("• Channels ", `${bot.channels.size.toLocaleString()}`, true)
+             .addField("• Users", `${bot.users.cache.size.toLocaleString()}`, true)
+             .addField("• Servers", `${bot.guilds.cache.size.toLocaleString()}`, true)
+             .addField("• Channels ", `${bot.channels.cache.size.toLocaleString()}`, true)
              .addField("• Discord.js", `v${version}`, true)
             // .addField("• Node", `${process.version}`, true)
              .addField("• CPU", `\`\`\`md\n${os.cpus().map(i => `${i.model}`)[0]}\`\`\``)

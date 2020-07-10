@@ -22,7 +22,7 @@ module.exports.run = async (bot, message, args) => {
 
       }
 
-      const embed = new Discord.RichEmbed()
+      const embed = new Discord.MessageEmbed()
       .setDescription(transArg.charCodeAt(0));
 
       return message.channel.send(embed);

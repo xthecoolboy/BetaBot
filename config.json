@@ -3,9 +3,12 @@
         "USERPREFIX":"/",
         "BOT_TOKEN":"Put your bot token here!",
         "EMBED_COLORS": "#fc9003",
-        "MUTED_ROLE": "Muted",
+        "MUTED_ROLE": "692954898261868604",
         "NO_PERMS_MESSAGE": "Sorry, you don't have permissions to use this!",
-        "ENABLE_MEMBER_COUNT": true
+        "ENABLE_MEMBER_COUNT": true,
+        "ENABLE_JOIN_ROLE": true,
+        "JOIN_ROLE": "692954912664846437",
+        "FILTER_LIST": ["example1", "example2"]
     },
 
     "channel_setup": {

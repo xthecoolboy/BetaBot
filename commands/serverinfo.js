@@ -11,18 +11,17 @@ module.exports.run = async (bot, message, args) => {
 
     let inline = true
     let sicon = message.guild.iconURL;
-    let serverembed = new Discord.RichEmbed()
-    .setColor(config["bot_setup"].EMBED_COLORS)
+    let serverembed = new Discord.MessageEmbed()
+    .setColor(config.bot_setup.EMBED_COLORS)
     .setThumbnail(sicon)
     .setAuthor(message.guild.name)
     .addField("Name", message.guild.name, inline)
     .addField("ID", message.guild.id, inline)
     .addField("Owner", message.guild.owner, inline)
     .addField("Region", message.guild.region, inline)
-    .addField("Verification Level", verlvl[message.guild.verificationLevel],inline)
     .addField("Members", `${message.guild.memberCount}`, inline)
-    .addField("Roles", message.guild.roles.size, inline)
-    .addField("Channels", message.guild.channels.size, inline)
+    .addField("Roles", message.guild.roles.cache.size, inline)
+    .addField("Channels", message.guild.channels.cache.size, inline)
     .addField("You Joined", message.member.joinedAt)
     .setFooter(`Created ${message.guild.createdAt}`);
 

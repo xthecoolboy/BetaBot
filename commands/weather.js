@@ -17,11 +17,11 @@ module.exports.run = async (bot, message, args) => {
         var location = result[0].location //This is a variable for the location part of the JSON Output
 
         //Sends weather log in embed
-        let embed = new Discord.RichEmbed()
+        let embed = new Discord.MessageEmbed()
            .setDescription(`**${current.skytext}**`) //How the sky looks like
            .setAuthor(`Weather for ${current.observationpoint}`) //Shows the current location of the weater
            .setThumbnail(current.imageUrl) //Sets thumbnail of the embed
-           .setColor(config["bot_setup"].EMBED_COLORS) //Sets the color of the embed
+           .setColor(config.bot_setup.EMBED_COLORS) //Sets the color of the embed
            .addField("Timezone", `UTC${location.timezone}`, true) //Shows the timezone
            .addField("Degree Type", location.degreetype, true) //Shows the degrees in Celcius
            .addField("Temperature", `${current.temperature}`, true)
@@ -33,7 +33,7 @@ module.exports.run = async (bot, message, args) => {
            .setFooter("© 2020 BetaBot");
            
            //Display when it's called
-           message.channel.sendEmbed(embed)
+           message.channel.send(embed)
 
     });
 

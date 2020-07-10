@@ -8,20 +8,20 @@ exports.run = (client, message, args) => {
   if (message.mentions.users.size < 1) return message.reply('You must mention someone to warn.'); //First args missing message
   if (reason.length < 1) return message.reply('You must provide a reason.'); //Reason message
 
-  const logEmbed = new Discord.RichEmbed()
+  const logEmbed = new Discord.MessageEmbed()
   .setAuthor(`User Warned`)
-  .setColor(config["bot_setup"].EMBED_COLORS)
+  .setColor(config.bot_setup.EMBED_COLORS)
   .addField("Executor", `${message.author.tag}`)
   .addField("Reason", `${reason}`)
   .addField("Channel", `${message.channel}`)
   .setFooter("© 2020 BetaBot");
   //let logsChannel = message.guild.channels.find(channel => channel.name === config.LOGS_CHANNEL);
-  let logsChannel = message.guild.channels.find(`id`, config["channel_setup"].LOGS_CHANNEL);
+  let logsChannel = message.guild.channels.find(`id`, config.channel_setup.LOGS_CHANNEL);
   if(!logsChannel) return message.channel.send(`❌ Logs channel not set, you can change this in config.json`);
 
-  let dmsEmbed = new Discord.RichEmbed()
+  let dmsEmbed = new Discord.MessageEmbed()
   .setTitle("Warn")
-  .setColor(config["bot_setup"].EMBED_COLORS)
+  .setColor(config.bot_setup.EMBED_COLORS)
   .setDescription(`You have been warned on \`${message.guild.name}\``)
   .addField("Warned by", message.author.tag)
   .addField("Reason", reason)
