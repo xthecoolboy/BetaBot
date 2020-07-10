@@ -2,6 +2,7 @@ const { Client, Collection } = require('discord.js');
 const { readdir } = require('fs');
 const Discord = require('discord.js')
 const config = require("./config.json")
+const fs = require('fs');
 const bot = new Discord.Client({disableEveryone: true});
     const user = new Client();
     user.commands = new Collection();
@@ -25,18 +26,22 @@ readdir('./events/', (err, files) => {
     });
   });
 
-
+  if(config.module_toggles.ENABLE_FILTER_WORDS)
   user.on('message', message => {
   	if (message.author.bot) return
         if(config.bot_setup.FILTER_LIST.some(word => message.content.toLowerCase().includes(word))){
       message.delete()
     }})
 
+
   user.on("message", async message => {
     if(message.author.bot) return;
     if(message.channel.type === "dm") return message.reply("Hey! how are you?")
 
         let prefix = config.bot_setup.USERPREFIX;
+
+    if (!config.bot_setup.CHAT_LOGS_BLACKLIST.includes(message.channel.name)) fs.appendFile('./data/chatlogs.txt', `[${new Date().toISOString()}] [G: ${message.guild.name} (${message.guild.id})] [C: ${message.channel.name} (${message.channel.id})] [A: ${message.author.tag} (${message.author.id})] ${message.content}\n`, function (err) {
+      if (err) throw err;
 
     if(!message.content.startsWith(prefix)) return; 
 
@@ -46,6 +51,7 @@ readdir('./events/', (err, files) => {
 
     let commandfile = user.commands.get(command.slice(prefix.length));
     if (commandfile) commandfile.run(user, message, args)
+    });
 
   });
 
