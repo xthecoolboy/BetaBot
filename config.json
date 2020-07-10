@@ -1,7 +1,7 @@
 { 
     "bot_setup": {
         "USERPREFIX":"/",
-        "BOT_TOKEN":"NzE3NTg2MTU3NTcxMTQ1NzM5.XwjfiQ.TfEgc3S_XNRW-BSfqOeU-jc_zlE",
+        "BOT_TOKEN":"Put your bot token here!",
         "EMBED_COLORS": "#fc9003",
         "MUTED_ROLE": "692954898261868604",
         "NO_PERMS_MESSAGE": "Sorry, you don't have permissions to use this!",
