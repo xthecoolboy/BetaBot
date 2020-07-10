@@ -10,7 +10,7 @@ module.exports = (user, member) => {
 
    if(config.module_toggles.ENABLE_WELCOME_MESSAGES) {
    let welcomeChannel = member.guild.channels.cache.get(config.channel_setup.WELCOME_CHANNEL); //Change welcome channel in config.json
-   if (welcomeChannel) welcomeChannel.send(JoinMessageVariable_User) //You can customize the welcome message here.
+   if (welcomeChannel) welcomeChannel.send(JoinMessageVariable_User)
  }
 
   // Member count channel update

@@ -15,14 +15,25 @@ module.exports.run = async (bot, message, args) => {
   let mutetime = args[1];
   if(!mutetime) return message.channel.send("You didn't specify a time!");
 
+  const logEmbed = new Discord.MessageEmbed()
+  .setAuthor(`User Muted`)
+  .setColor(config.bot_setup.EMBED_COLORS)
+  .addField("Executor", `${message.author.tag}`)
+  .addField("Channel", `${message.channel}`)
+  .setFooter("© 2020 BetaBot");
+  let logsChannel = message.guild.channels.cache.get(config.channel_setup.LOGS_CHANNEL);
+
   await tomute.roles.add(muterole).catch(error => console.log(error));
   message.reply(`<@${tomute.id}> has been muted for ${ms(ms(mutetime))}`);
+  if (logsChannel) return logsChannel.send(logEmbed)
+
 
   setTimeout(function(){
     tomute.roles.remove(muterole).catch(error => console.log(error));
   }, ms(mutetime));
 
   message.delete();
+  
 
 }
 

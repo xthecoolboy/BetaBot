@@ -30,6 +30,7 @@
     "hastebin-gen": "^2.0.5",
     "libsodium-wrappers": "^0.7.4",
     "moment": "^2.27.0",
+    "ms": "^2.1.2",
     "node-fetch": "^2.6.0",
     "nodemon": "^2.0.4",
     "opusscript": "0.0.6",

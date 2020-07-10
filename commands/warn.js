@@ -15,9 +15,7 @@ exports.run = (client, message, args) => {
   .addField("Reason", `${reason}`)
   .addField("Channel", `${message.channel}`)
   .setFooter("© 2020 BetaBot");
-  //let logsChannel = message.guild.channels.find(channel => channel.name === config.LOGS_CHANNEL);
-  let logsChannel = message.guild.channels.find(`id`, config.channel_setup.LOGS_CHANNEL);
-  if(!logsChannel) return message.channel.send(`❌ Logs channel not set, you can change this in config.json`);
+  let logsChannel = message.guild.channels.cache.get(config.channel_setup.LOGS_CHANNEL);
 
   let dmsEmbed = new Discord.MessageEmbed()
   .setTitle("Warn")
@@ -28,7 +26,7 @@ exports.run = (client, message, args) => {
   .setFooter("© 2020 BetaBot");
 
   user.send(dmsEmbed);
-  logsChannel.send(logEmbed)
+  if (logsChannel) return logsChannel.send(logEmbed)
 
   message.delete();
   

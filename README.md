@@ -35,6 +35,7 @@ npm run all
         "NO_PERMS_MESSAGE": "Sorry, you don't have permissions to use this!",
         "JOIN_ROLE": "692954912664846437",
         "FILTER_LIST": ["example1", "example2"],
+        "CHAT_LOGS_BLACKLIST": ["testchannel1", "testchannel2"],
         "WELCOME_MESSAGE": "{user} Welcome to {guild}!",
         "LEAVE_MESSAGE": "{user} has left the server!"
     },
@@ -44,7 +45,8 @@ npm run all
         "ENABLE_LEAVE_MESSAGES": true,
         "ENABLE_MEMBER_COUNT": true,
         "ENABLE_JOIN_ROLE": true,
-        "ENABLE_FILTER_WORDS": true
+        "ENABLE_FILTER_WORDS": true,
+        "ENABLE_TICKET_SYSTEM": true
     },
 
     "channel_setup": {
@@ -52,9 +54,13 @@ npm run all
         "LEAVE_CHANNEL": "692954944340361246",
         "LOGS_CHANNEL": "692954949835030528",
         "MEMBER_COUNT_CHANNEL": "730571080304951357"
+    },
+
+    "ticket_system": {
+        "SUPPORT_ROLE": "731044651775295508",
+        "TICKET_CATEGORY": "731266956854034434"
     }
 }
-
 
 ```
 

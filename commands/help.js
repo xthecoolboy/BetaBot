@@ -50,6 +50,12 @@ ${USERPREFIX}weather
 ${USERPREFIX}yomama
 ${USERPREFIX}github
 
+__**Ticket System**__
+${USERPREFIX}new
+${USERPREFIX}close
+${USERPREFIX}add
+${USERPREFIX}remove
+
 __**Administration/Moderation**__
 ${USERPREFIX}ban
 ${USERPREFIX}kick

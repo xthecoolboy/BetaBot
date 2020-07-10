@@ -1,7 +1,7 @@
 { 
     "bot_setup": {
         "USERPREFIX":"/",
-        "BOT_TOKEN":"Put your bot token here!",
+        "BOT_TOKEN":"NzE3NTg2MTU3NTcxMTQ1NzM5.XwjfiQ.TfEgc3S_XNRW-BSfqOeU-jc_zlE",
         "EMBED_COLORS": "#fc9003",
         "MUTED_ROLE": "692954898261868604",
         "NO_PERMS_MESSAGE": "Sorry, you don't have permissions to use this!",
@@ -17,7 +17,8 @@
         "ENABLE_LEAVE_MESSAGES": true,
         "ENABLE_MEMBER_COUNT": true,
         "ENABLE_JOIN_ROLE": true,
-        "ENABLE_FILTER_WORDS": true
+        "ENABLE_FILTER_WORDS": true,
+        "ENABLE_TICKET_SYSTEM": true
     },
 
     "channel_setup": {
@@ -25,5 +26,10 @@
         "LEAVE_CHANNEL": "692954944340361246",
         "LOGS_CHANNEL": "692954949835030528",
         "MEMBER_COUNT_CHANNEL": "730571080304951357"
+    },
+
+    "ticket_system": {
+        "SUPPORT_ROLE": "731044651775295508",
+        "TICKET_CATEGORY": "731266956854034434"
     }
 }

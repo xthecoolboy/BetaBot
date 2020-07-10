@@ -25,13 +25,12 @@ module.exports.run = async (bot, message, args) => {
         .setColor(config.bot_setup.EMBED_COLORS)
         .addField("Executor", `<@${message.author.id}>`)
         .addField("User banned", `${member}`)
+        .addField("Reason", `${reason}`)
         .addField("Channel", `${message.channel}`)
         .setFooter("© 2020 BetaBot");
-        //.addField("Reason", `${reason}`)
 
         //let logsChannel = message.guild.channels.find(channel => channel.name === config.LOGS_CHANNEL);
-        let logsChannel = message.guild.channels.find(`id`, config["channel_setup"].LOGS_CHANNEL);
-        if(!logsChannel) return message.channel.send(`❌ Logs channel not set, you can change this in config.json`);
+        let logsChannel = message.guild.channels.cache.get(config.channel_setup.LOGS_CHANNEL);
 
         if(!member) return message.channel.send(xdemb)
         if(!member.bannable) return message.channel.send("I can't ban this user!")
@@ -49,7 +48,7 @@ module.exports.run = async (bot, message, args) => {
         .setTimestamp()
 
         message.channel.send(chatlog)
-        logsChannel.send(logEmbed)
+        if (logsChannel) return logsChannel.send(logEmbed)
         console.log(`${member.user.tag} was banned by ${message.author}`);
 
         message.delete()
