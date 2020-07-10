@@ -1,6 +1,4 @@
-![logo](https://i.imgur.com/KueH5Jp.png)
-
-
+![logo](https://i.imgur.com/b1hDQkD.png)
 If you found a bug, please open an issue, Pull Requests are always welcome.
 
 
