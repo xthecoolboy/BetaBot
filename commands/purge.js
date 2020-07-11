@@ -29,7 +29,6 @@ module.exports.run = async (bot, message, args) => {
                 await message.channel.bulkDelete(args[0])
                 message.channel.send(`Cleared ${args[0]} messages ✅`).then(msg => msg.delete({ timeout: 2000 }));
                 if (logsChannel) return logsChannel.send(logEmbed)
-                message.delete().catch();
             } catch(error) {
                 message.channel.send(message.author + ", You can't delete messages older than 2 weeks!")
             }
