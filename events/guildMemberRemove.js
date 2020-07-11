@@ -15,7 +15,8 @@ module.exports = (client, member) => {
 
   // Member count channel update
   if(config.module_toggles.ENABLE_MEMBER_COUNT) {
-   member.guild.channels.cache.get(config.channel_setup.MEMBER_COUNT_CHANNEL).setName(`Member Count: ${member.guild.memberCount}`).catch(error => console.log(error));
+   let memberCountChannel = member.guild.channels.cache.get(config.channel_setup.MEMBER_COUNT_CHANNEL)
+   if (memberCountChannel) memberCountChannel.setName(`Member Count: ${member.guild.memberCount}`).catch(error => console.log(error));
 }
 
 };

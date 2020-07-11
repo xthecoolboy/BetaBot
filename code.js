@@ -26,13 +26,13 @@ readdir('./events/', (err, files) => {
     });
   });
 
+//Filter System
   if(config.module_toggles.ENABLE_FILTER_WORDS)
   user.on('message', message => {
   	if (message.author.bot) return
         if(config.bot_setup.FILTER_LIST.some(word => message.content.toLowerCase().includes(word))){
       message.delete()
     }})
-
 
   user.on("message", async message => {
     if(message.author.bot) return;

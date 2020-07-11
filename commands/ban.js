@@ -1,5 +1,6 @@
 const Discord = require("discord.js")
 const config = require('../config.json');
+const fs = require('fs');
 const USERPREFIX = config["bot_setup"].USERPREFIX
 //ban command
 
@@ -47,8 +48,11 @@ module.exports.run = async (bot, message, args) => {
         .addField("Reason", reason)
         .setTimestamp()
 
-        message.channel.send(chatlog)
+        message.channel.send(chatlog).then(msg => msg.delete({ timeout: 5000 }));
         if (logsChannel) return logsChannel.send(logEmbed)
+        fs.appendFile('./data/punishmentlogs.txt', `[${new Date().toISOString()}] [G: ${message.guild.name} (${message.guild.id})] [C: ${message.channel.name} (${message.channel.id})] [A: ${message.author.tag} (${message.author.id})] [T: ${member.user.tag} (${member.id})] [TYPE: Ban] ${reason}\n`, function (err) {
+          if (err) throw err;
+        });
         console.log(`${member.user.tag} was banned by ${message.author}`);
 
         message.delete()

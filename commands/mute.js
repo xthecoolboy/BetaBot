@@ -1,5 +1,6 @@
 const Discord = require("discord.js");
 const ms = require("ms");
+const fs = require('fs');
 const config = require('../config.json');
 module.exports.run = async (bot, message, args) => {
 
@@ -26,6 +27,9 @@ module.exports.run = async (bot, message, args) => {
   await tomute.roles.add(muterole).catch(error => console.log(error));
   message.reply(`<@${tomute.id}> has been muted for ${ms(ms(mutetime))}`);
   if (logsChannel) return logsChannel.send(logEmbed)
+fs.appendFile('./data/punishmentlogs.txt', `[${new Date().toISOString()}] [G: ${message.guild.name} (${message.guild.id})] [C: ${message.channel.name} (${message.channel.id})] [A: ${message.author.tag} (${message.author.id})] [T: ${tomute.user.tag} (${tomute.id})] [TYPE: Mute] \n`, function (err) {
+  if (err) throw err;
+  });
 
 
   setTimeout(function(){

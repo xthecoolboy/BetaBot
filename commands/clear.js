@@ -1,10 +1,10 @@
 const Discord = require("discord.js")
 const config = require('../config.json');
-const { USERPREFIX } = require('../config.json');
+const USERPREFIX = config.bot_setup.USERPREFIX
 
 module.exports.run = async (bot, message, args) => {
 
-	if(!message.member.hasPermission("MANAGE_MESSAGES")) return message.reply(config["bot_setup"].NO_PERMS_MESSAGE);
+	if(!message.member.hasPermission("MANAGE_MESSAGES")) return message.reply(config.bot_setup.NO_PERMS_MESSAGE);
  
  const noAmount = new Discord.MessageEmbed()
     .setColor(config.bot_setup.EMBED_COLORS)
@@ -21,13 +21,13 @@ module.exports.run = async (bot, message, args) => {
     .addField("Channel", `${message.channel}`)
     .setFooter("© 2020 BetaBot");
     //let logsChannel = message.guild.channels.find(channel => channel.name === config.LOGS_CHANNEL);
-    let logsChannel = message.guild.channels.find(`id`, config["channel_setup"].LOGS_CHANNEL);
+    let logsChannel = message.guild.channels.cache.get(config.channel_setup.LOGS_CHANNEL);
 	{
 		if (args[0])
 		{
             try {
                 await message.channel.bulkDelete(args[0])
-                message.channel.send(`Cleared ${args[0]} messages ✅`).then(msg => msg.delete(2000))
+                message.channel.send(`Cleared ${args[0]} messages ✅`).then(msg => msg.delete({ timeout: 2000 }));
                 if (logsChannel) return logsChannel.send(logEmbed)
                 message.delete().catch();
             } catch(error) {

@@ -15,12 +15,13 @@ module.exports = (user, member) => {
 
   // Member count channel update
   if(config.module_toggles.ENABLE_MEMBER_COUNT) {
-    member.guild.channels.cache.get(config.channel_setup.MEMBER_COUNT_CHANNEL).setName(`Member Count: ${member.guild.memberCount}`).catch(error => console.log(error));
+    let memberCountChannel = member.guild.channels.cache.get(config.channel_setup.MEMBER_COUNT_CHANNEL)
+    if (memberCountChannel) memberCountChannel.setName(`Member Count: ${member.guild.memberCount}`).catch(error => console.log(error));
   }
 
   if(config.module_toggles.ENABLE_JOIN_ROLE) {
     var role = member.guild.roles.cache.get(config.bot_setup.JOIN_ROLE);
-    if (!role) return console.log("[!] Role not found (Config: 'JOIN_ROLE')");
+    if (!role) return console.log("[!] Join role not found (Config: 'JOIN_ROLE')");
     member.roles.add(role);
 }
 

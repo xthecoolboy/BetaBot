@@ -1,5 +1,6 @@
 const Discord = require("discord.js")
 const config = require('../config.json');
+const fs = require('fs');
 const USERPREFIX = config.bot_setup.USERPREFIX
 
 module.exports.run = async (bot, message, args) => {
@@ -15,7 +16,10 @@ module.exports.run = async (bot, message, args) => {
 
     let member = message.mentions.members.first();
     if(!member) return message.channel.send(xdemb)
-      
+
+    let reason = args.slice(1).join(' ');
+    if(!reason) return message.channel.send("Please provide a reason to kick this user!")
+
     if(!member.kickable) 
       return message.channel.send("I cannot kick this user!");
 
@@ -29,8 +33,6 @@ module.exports.run = async (bot, message, args) => {
       .setFooter("© 2020 BetaBot");
       let logsChannel = message.guild.channels.cache.get(config.channel_setup.LOGS_CHANNEL);
     
-    let reason = args.slice(1).join(' ');
-    if(!reason) return message.channel.send("Please provide a reason to kick this user!")
     
     await member.kick(reason)
       .catch(error => message.reply(`Sorry, I couldn't kick because of : ${error}`));
@@ -44,8 +46,11 @@ module.exports.run = async (bot, message, args) => {
       .setTimestamp()
       .setFooter(member.id)
 
-      message.channel.send(kick)
+      message.channel.send(kick).then(msg => msg.delete({ timeout: 5000 }));
       if (logsChannel) return logsChannel.send(logEmbed)
+      fs.appendFile('./data/punishmentlogs.txt', `[${new Date().toISOString()}] [G: ${message.guild.name} (${message.guild.id})] [C: ${message.channel.name} (${message.channel.id})] [A: ${message.author.tag} (${message.author.id})] [T: ${member.user.tag} (${member.id})] [TYPE: Kick] ${reason}\n`, function (err) {
+        if (err) throw err;
+      });
       console.log(`${member.user.tag} was kicked by ${message.author}`);
 
     message.delete();

@@ -3,7 +3,7 @@
         "USERPREFIX":"/",
         "BOT_TOKEN":"Put your bot token here!",
         "EMBED_COLORS": "#fc9003",
-        "MUTED_ROLE": "692954898261868604",
+        "MUTED_ROLE": "731044654174437497",
         "NO_PERMS_MESSAGE": "Sorry, you don't have permissions to use this!",
         "JOIN_ROLE": "692954912664846437",
         "FILTER_LIST": ["example1", "example2"],
@@ -22,14 +22,14 @@
     },
 
     "channel_setup": {
-        "WELCOME_CHANNEL": "692954944340361246",
-        "LEAVE_CHANNEL": "692954944340361246",
-        "LOGS_CHANNEL": "692954949835030528",
-        "MEMBER_COUNT_CHANNEL": "730571080304951357"
+        "WELCOME_CHANNEL": "69295494434036246",
+        "LEAVE_CHANNEL": "69295494434036146",
+        "LOGS_CHANNEL": "69295494983503028",
+        "MEMBER_COUNT_CHANNEL": "73057108030491357"
     },
 
     "ticket_system": {
         "SUPPORT_ROLE": "731044651775295508",
-        "TICKET_CATEGORY": "731266956854034434"
+        "TICKET_CATEGORY": "7312669564034434"
     }
 }
