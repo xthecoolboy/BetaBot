@@ -18,7 +18,8 @@
         "ENABLE_MEMBER_COUNT": true,
         "ENABLE_JOIN_ROLE": true,
         "ENABLE_FILTER_WORDS": true,
-        "ENABLE_TICKET_SYSTEM": true
+        "ENABLE_TICKET_SYSTEM": true,
+        "ENABLE_CHAT_LOGS": true
     },
 
     "channel_setup": {

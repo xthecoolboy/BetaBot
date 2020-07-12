@@ -40,6 +40,7 @@ readdir('./events/', (err, files) => {
 
         let prefix = config.bot_setup.USERPREFIX;
 
+  if(config.module_toggles.ENABLE_CHAT_LOGS)
     if (!config.bot_setup.CHAT_LOGS_BLACKLIST.includes(message.channel.name)) fs.appendFile('./data/chatlogs.txt', `[${new Date().toISOString()}] [G: ${message.guild.name} (${message.guild.id})] [C: ${message.channel.name} (${message.channel.id})] [A: ${message.author.tag} (${message.author.id})] ${message.content}\n`, function (err) {
       if (err) throw err;
 
