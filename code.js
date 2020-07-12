@@ -31,6 +31,7 @@ readdir('./events/', (err, files) => {
   user.on('message', message => {
   	if (message.author.bot) return
         if(config.bot_setup.FILTER_LIST.some(word => message.content.toLowerCase().includes(word))){
+          message.channel.send(`${message.author}, you used a bad word!`).then(msg => msg.delete({ timeout: 3000 }));
       message.delete()
     }})
 

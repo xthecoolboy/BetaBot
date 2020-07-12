@@ -46,7 +46,8 @@ npm run all
         "ENABLE_MEMBER_COUNT": true,
         "ENABLE_JOIN_ROLE": true,
         "ENABLE_FILTER_WORDS": true,
-        "ENABLE_TICKET_SYSTEM": true
+        "ENABLE_TICKET_SYSTEM": true,
+        "ENABLE_ANTI_ALTS": true
     },
 
     "channel_setup": {
@@ -66,5 +67,66 @@ npm run all
 
 ## 📝 Features & Commands
 ```
-Coming soon...
+#Commands
+
+General
+- 8ball
+- avatar
+- botinfo
+- cat
+- clap
+- cow
+- dog
+- finduser
+- flip
+- gif
+- hastebin
+- icon
+- id
+- lenny
+- megusta
+- morse
+- owner
+- pepe
+- ping
+- poll
+- reverse
+- roleinfo
+- rps
+- serverinfo
+- shrug
+- slots
+- stats
+- timer
+- translate
+- unicode
+- userinfo
+- weather
+- yomama
+- github
+
+Ticket System
+- new
+- close
+- add
+- remove
+
+Administration/Moderation
+- ban
+- kick
+- warn
+- purge
+- setstatus
+
+#Features
+- Anti alt system (Still a WIP, but it works)
+- Ticket system
+- Welcome/Leave messages
+- Chat Logs
+- Punishment logs
+- Filter words
+- Join role
+- Member count channel
+- You can edit almost everything in config.json
+And much more to come!
 ```

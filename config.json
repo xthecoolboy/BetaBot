@@ -19,13 +19,14 @@
         "ENABLE_JOIN_ROLE": true,
         "ENABLE_FILTER_WORDS": true,
         "ENABLE_TICKET_SYSTEM": true,
-        "ENABLE_CHAT_LOGS": true
+        "ENABLE_CHAT_LOGS": true,
+        "ENABLE_ANTI_ALTS": true
     },
 
     "channel_setup": {
         "WELCOME_CHANNEL": "69295494434036246",
         "LEAVE_CHANNEL": "69295494434036146",
-        "LOGS_CHANNEL": "69295494983503028",
+        "LOGS_CHANNEL": "731044707521790052",
         "MEMBER_COUNT_CHANNEL": "73057108030491357"
     },
 
