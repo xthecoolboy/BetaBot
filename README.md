@@ -67,7 +67,7 @@ npm run all
 
 ## 📝 Features & Commands
 ```
-#Commands
+Commands
 
 General
 - 8ball
@@ -118,7 +118,7 @@ Administration/Moderation
 - purge
 - setstatus
 
-#Features
+Features
 - Anti alt system (Still a WIP, but it works)
 - Ticket system
 - Welcome/Leave messages
