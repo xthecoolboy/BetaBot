@@ -12,11 +12,20 @@ module.exports.run = async (bot, message, args) => {
         READ_MESSAGE_HISTORY: true
     });
 
+    let logsChannel = message.guild.channels.cache.get(config.channel_setup.LOGS_CHANNEL);
+
+    const log = new Discord.MessageEmbed()
+    .setColor(config.COLOR)
+    .setTitle(`🗒 Ticket User Added`)
+    .setDescription(`**User** - ${message.author}\n**Channel** - ${message.channel}\n**Added** - ${user}`)
+    .setTimestamp(message.createdAt)
+
     const embed = new Discord.MessageEmbed()
     .setColor(config.bot_setup.EMBED_COLORS)
     .setDescription(`Added **${aUser} (${aUser.user.tag})** to the ticket.`)
 
-    message.channel.send(embed).then(msg => msg.delete({ timeout: 10000 }));
+    message.channel.send(embed).then(msg => msg.delete({ timeout: 5000 }));
+    if (logsChannel) return logsChannel.send(log)
 }
 
 module.exports.help = {
