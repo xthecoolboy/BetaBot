@@ -57,4 +57,4 @@ readdir('./events/', (err, files) => {
 
   });
 
-  user.login(config.bot_setup.BOT_TOKEN)
+bot.login(process.env.TOKEN);
